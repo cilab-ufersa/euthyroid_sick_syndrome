@@ -1,7 +1,7 @@
 import pandas as pd #Para trabalhar com dataframes               
 import numpy as np #Para trabalhar com arrays
 import matplotlib.pyplot as plt #Para plotar os gráficos
-from sklearn.tree import DecisionTreeClassifier #Para criar o modelo de árvore de decisão
+from sklearn.ensemble import RandomForestClassifier #Para criar o modelo de árvore de decisão
 from sklearn.model_selection import train_test_split #Para dividir o dataset em treino e teste
 import seaborn as sns 
 from imblearn.over_sampling import SMOTE #Para balancear o dataset
@@ -35,7 +35,7 @@ if __name__ == '__main__':
     input_train, input_test, output_train, output_test = train_test_split(dataset_res, ouput_label, test_size=0.2, random_state=23)
     
     #Criando o modelo de árvore de decisão
-    model= DecisionTreeClassifier(criterion='entropy', random_state=0)
+    model= RandomForestClassifier()
     model.fit(input_train, output_train) #Treinamento
 
     # Fazer a classificação 
