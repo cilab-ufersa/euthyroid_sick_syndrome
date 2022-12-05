@@ -12,7 +12,7 @@ What things you need to have to be able to run:
 ## Requirements 
 
 ```bash
-$ pip install requirements.txt
+$ pip install -r requirements.txt
 ```
 
 ## Some labels 
