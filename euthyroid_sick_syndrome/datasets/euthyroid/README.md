@@ -10,6 +10,11 @@
 | age| sex| on_thyroxine | query_on_thyroxine | on_antithyroid_medication | thyroid_surgery | query_hypothyroid | query_hyperthyroid | pregnant| sick| tumor | lithium| goitre| TSH | T3 | TT4 |  T4U |  FTI | 
 | ----| ----| ---- | ---- |----| ---- | ----| ---- | ----| ----| ---- |----|----|----| ---- | ---- | ---- | ---- |  
 
+### considering only blood exams features
+
+| age| sex| TSH | T3 | TT4 |  T4U |  FTI | 
+| ----| ----| ---- | ---- |----| ---- | ----| 
+
 where 
 
 - Levothyroxine  (T4 /T4U)
@@ -17,4 +22,5 @@ where
 - Total  T4 (TT4)
 - Free  T4  Index  (FTI) 
 - Thyroid  Stimulating  Hormone  (TSH)
+
 
