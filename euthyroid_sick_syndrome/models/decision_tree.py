@@ -1,3 +1,5 @@
+import sys
+sys.path.append('euthyroid_sick_syndrome')
 import pandas as pd #Para trabalhar com dataframes               
 import numpy as np #Para trabalhar com arrays
 import matplotlib.pyplot as plt #Para plotar os gráficos
@@ -7,6 +9,7 @@ import seaborn as sns
 from imblearn.over_sampling import SMOTE #Para balancear o dataset
 from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay #Para plotar a matriz de confusão
 from sklearn.preprocessing import StandardScaler
+from utils.utils import * 
 
 if __name__ == '__main__':
     #Carregando o dataset
@@ -32,8 +35,7 @@ if __name__ == '__main__':
 
 
     #Balanceamento dos dados 
-    sm = SMOTE(random_state=42, k_neighbors=5)
-    dataset_res, ouput_label = sm.fit_resample(dataset, output_label_dataset)
+    dataset_res, ouput_label = balance_dataset_smote(dataset, output_label_dataset, random_state=42, k_neighbors=5)
 
  
     #Dividindo o dataset em treino e teste
