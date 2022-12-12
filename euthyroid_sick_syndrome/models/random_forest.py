@@ -6,7 +6,8 @@ from sklearn.model_selection import train_test_split #Para dividir o dataset em 
 import seaborn as sns 
 from imblearn.over_sampling import SMOTE #Para balancear o dataset
 from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay #Para plotar a matriz de confusão
-from sklearn.metrics import accuracy_score #para calcular a acuracia do modelo
+from sklearn.metrics import accuracy_score #Para calcular a acuracia do modelo
+from sklearn.metrics import precision_score #Para calcular a precisão do modelo
 
 
 if __name__ == '__main__':
@@ -50,5 +51,9 @@ if __name__ == '__main__':
     disp.ax_.set_xlabel('Classificação prevista')
     disp.ax_.set_ylabel('Classificação real')
     plt.show()
-    accuracy = accuracy_score(output_test, output_model_decision)
-    print("a acuracia é: ", accuracy)
+
+    print("a acurácia é de: ", accuracy_score(output_test, output_model_decision)) #pontuação de acurácia
+    
+    print("A precisão é de: ", precision_score(output_test, output_model_decision)) #pontuação de precisão
+
+    
