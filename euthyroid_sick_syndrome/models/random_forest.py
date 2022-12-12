@@ -8,6 +8,8 @@ from imblearn.over_sampling import SMOTE #Para balancear o dataset
 from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay #Para plotar a matriz de confusão
 from sklearn.metrics import accuracy_score #Para calcular a acuracia do modelo
 from sklearn.metrics import precision_score #Para calcular a precisão do modelo
+from sklearn.metrics import recall_score #Para comparar os falsos positivos com os falsos negativos
+from sklearn.metrics import f1_score #Para calcular a média harmonica entre precisão e recall
 
 
 if __name__ == '__main__':
@@ -52,8 +54,10 @@ if __name__ == '__main__':
     disp.ax_.set_ylabel('Classificação real')
     plt.show()
 
-    print("a acurácia é de: ", accuracy_score(output_test, output_model_decision)) #pontuação de acurácia
+    print("\nA acurácia é de: ", accuracy_score(output_test, output_model_decision)) #Pontuação de acurácia
     
-    print("A precisão é de: ", precision_score(output_test, output_model_decision)) #pontuação de precisão
+    print("A precisão é de: ", precision_score(output_test, output_model_decision)) #Pontuação de precisão
 
-    
+    print("A pontuação de recall é de: ", recall_score(output_test, output_model_decision)) #Pontuação de recall
+
+    print("A pontuação de F1 é de: ", f1_score(output_test, output_model_decision)) #Pontuação do F1
