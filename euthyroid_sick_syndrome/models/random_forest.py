@@ -11,7 +11,7 @@ from sklearn.metrics import precision_score #Para calcular a precisão do modelo
 from sklearn.metrics import recall_score #Para comparar os falsos positivos com os falsos negativos
 from sklearn.metrics import f1_score #Para calcular a média harmonica entre precisão e recall
 from sklearn import metrics #Para calcular a curva ROC
-
+from mlxtend.plotting import plot_learning_curves #Para plotar a curva de erro
 
 
 if __name__ == '__main__':
@@ -69,4 +69,9 @@ if __name__ == '__main__':
     plt.plot(fp, tp)
     plt.ylabel("verdadeiro positivo")
     plt.xlabel("falso positivo")
+    plt.show()
+
+    #plotando a curva de erro
+    #clf = output_model_decision
+    plot_learning_curves(input_train, input_test, output_train, output_test, clf)
     plt.show()
