@@ -1,3 +1,5 @@
+import sys
+sys.path.append('euthyroid_sick_syndrome')
 import pandas as pd #Para trabalhar com dataframes               
 import numpy as np #Para trabalhar com arrays
 import matplotlib.pyplot as plt #Para plotar os gráficos
@@ -5,13 +7,9 @@ from sklearn.ensemble import RandomForestClassifier #Para criar o modelo de árv
 from sklearn.model_selection import train_test_split #Para dividir o dataset em treino e teste
 import seaborn as sns 
 from imblearn.over_sampling import SMOTE #Para balancear o dataset
-from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay #Para plotar a matriz de confusão
-from sklearn.metrics import accuracy_score #Para calcular a acuracia do modelo
-from sklearn.metrics import precision_score #Para calcular a precisão do modelo
-from sklearn.metrics import recall_score #Para comparar os falsos positivos com os falsos negativos
-from sklearn.metrics import f1_score #Para calcular a média harmonica entre precisão e recall
-from sklearn import metrics #Para calcular a curva ROC
 from mlxtend.plotting import plot_learning_curves #Para plotar a curva de erro
+from utils import *
+
 
 
 if __name__ == '__main__':
@@ -48,30 +46,19 @@ if __name__ == '__main__':
     output_model_decision = model.predict(input_test)
 
     #Plotando a matriz de confusão
-    cm = confusion_matrix(output_test, output_model_decision)
-    disp = ConfusionMatrixDisplay(confusion_matrix=cm, display_labels=model.classes_)
-    disp.plot()
-    disp.ax_.set_title('Matriz de confusão')
-    disp.ax_.set_xlabel('Classificação prevista')
-    disp.ax_.set_ylabel('Classificação real')
-    plt.show()
+    plot_confusion_matrix(output_test, output_model_decision, model)
 
-    print("\nA acurácia é de: ", accuracy_score(output_test, output_model_decision)) #Pontuação de acurácia
+    accuracy(output_test, output_model_decision) #Pontuação de acurácia
     
-    print("A precisão é de: ", precision_score(output_test, output_model_decision)) #Pontuação de precisão
+    precision(output_test, output_model_decision) #Pontuação de precisão
 
-    print("A pontuação de recall é de: ", recall_score(output_test, output_model_decision)) #Pontuação de recall
+    recall(output_test, output_model_decision) #Pontuação de recall
 
-    print("A pontuação de F1 é de: ", f1_score(output_test, output_model_decision)) #Pontuação do F1
+    f1(output_test, output_model_decision)
 
-    #plotando a curva ROC
-    fp, tp, _ = metrics.roc_curve(output_test, output_model_decision)
-    plt.plot(fp, tp)
-    plt.ylabel("verdadeiro positivo")
-    plt.xlabel("falso positivo")
-    plt.show()
+    
+    roc(output_test, output_model_decision) #plotando a curva ROC
 
     #plotando a curva de erro
     #clf = model
-    plot_learning_curves(input_train, output_train, input_test, output_test, model)
-    plt.show()
+    learning_curves(input_train, output_train, input_test, output_test, model)
