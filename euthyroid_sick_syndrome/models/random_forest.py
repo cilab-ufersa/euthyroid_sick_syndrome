@@ -72,6 +72,6 @@ if __name__ == '__main__':
     plt.show()
 
     #plotando a curva de erro
-    #clf = output_model_decision
-    plot_learning_curves(input_train, input_test, output_train, output_test, clf)
+    #clf = model
+    plot_learning_curves(input_train, output_train, input_test, output_test, model)
     plt.show()
