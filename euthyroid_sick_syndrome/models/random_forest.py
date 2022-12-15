@@ -10,6 +10,8 @@ from sklearn.metrics import accuracy_score #Para calcular a acuracia do modelo
 from sklearn.metrics import precision_score #Para calcular a precisão do modelo
 from sklearn.metrics import recall_score #Para comparar os falsos positivos com os falsos negativos
 from sklearn.metrics import f1_score #Para calcular a média harmonica entre precisão e recall
+from sklearn import metrics #Para calcular a curva ROC
+
 
 
 if __name__ == '__main__':
@@ -61,3 +63,10 @@ if __name__ == '__main__':
     print("A pontuação de recall é de: ", recall_score(output_test, output_model_decision)) #Pontuação de recall
 
     print("A pontuação de F1 é de: ", f1_score(output_test, output_model_decision)) #Pontuação do F1
+
+    #plotando a curva ROC
+    fp, tp, _ = metrics.roc_curve(output_test, output_model_decision)
+    plt.plot(fp, tp)
+    plt.ylabel("verdadeiro positivo")
+    plt.xlabel("falso positivo")
+    plt.show()
