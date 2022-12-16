@@ -60,5 +60,6 @@ if __name__ == '__main__':
     roc(output_test, output_model_decision) #plotando a curva ROC
 
     #plotando a curva de erro
-    #clf = model
+    miss_classification(input_train, output_train, input_test, output_test, model)
+
     learning_curves(input_train, output_train, input_test, output_test, model)

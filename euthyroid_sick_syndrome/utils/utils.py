@@ -93,6 +93,10 @@ def roc(output_test, output_model_decision):
 
 from mlxtend.plotting import plot_learning_curves #Para plotar a curva de erro
 
-def learning_curves(input_train, output_train, input_test, output_test, model):
+def miss_classification(input_train, output_train, input_test, output_test, model):
     plot_learning_curves(X_train=input_train, y_train=output_train, X_test=input_test, y_test=output_test, clf=model)
+    plt.show()
+
+def learning_curves(input_train, output_train, input_test, output_test, model):
+    plot_learning_curves(X_train=input_train, y_train=output_train, X_test=input_test, y_test=output_test, clf=model, scoring='accuracy')
     plt.show()
