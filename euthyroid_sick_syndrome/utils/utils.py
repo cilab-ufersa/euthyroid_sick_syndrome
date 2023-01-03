@@ -100,3 +100,17 @@ def miss_classification(input_train, output_train, input_test, output_test, mode
 def learning_curves(input_train, output_train, input_test, output_test, model):
     plot_learning_curves(X_train=input_train, y_train=output_train, X_test=input_test, y_test=output_test, clf=model, scoring='accuracy')
     plt.show()
+
+#error
+def learning_curves_scikit(train_sizes, train_mean, train_std, test_mean, test_std):
+    plt.subplots(1, figsize=(10,10))
+    plt.plot(train_sizes, train_mean, '--', color="#111111",  label="Training score")
+    plt.plot(train_sizes, test_mean, color="#111111", label="Cross-validation score")
+
+    plt.fill_between(train_sizes, train_mean - train_std, train_mean + train_std, color="#DDDDDD")
+    plt.fill_between(train_sizes, test_mean - test_std, test_mean + test_std, color="#DDDDDD")
+
+    plt.title("Learning Curve")
+    plt.xlabel("Training Set Size"), plt.ylabel("Accuracy Score"), plt.legend(loc="best")
+    plt.tight_layout()
+    plt.show()

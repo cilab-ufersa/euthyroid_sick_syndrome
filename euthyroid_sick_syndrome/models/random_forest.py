@@ -63,3 +63,5 @@ if __name__ == '__main__':
     miss_classification(input_train, output_train, input_test, output_test, model)
 
     learning_curves(input_train, output_train, input_test, output_test, model)
+    #error
+    learning_curves_scikit(0.2, input_train, output_train, input_test, output_test)
