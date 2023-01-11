@@ -12,5 +12,13 @@ What things you need to have to be able to run:
 ## Requirements 
 
 ```bash
-$ pip install requirements.txt
+$ pip install -r requirements.txt
 ```
+
+## Some labels 
+
+- Levothyroxine  (T4 /T4U)
+- Triiodothyronine  (T3)
+- Total  T4 (TT4)
+- Free  T4  Index  (FTI) 
+- Thyroid  Stimulating  Hormone  (TSH)
