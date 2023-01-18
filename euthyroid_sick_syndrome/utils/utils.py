@@ -15,7 +15,6 @@ def prepare_dataset(path_origin, columns_labels, path_destiny):
     dataframe.columns=columns_labels
     dataframe.to_csv(path_destiny, index=False)
 
-random
 import matplotlib.pyplot as plt
 from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay #Para plotar a matriz de confusão
 
@@ -105,20 +104,6 @@ def learning_curves(input_train, output_train, input_test, output_test, model):
     plot_learning_curves(X_train=input_train, y_train=output_train, X_test=input_test, y_test=output_test, clf=model, scoring='accuracy')
     plt.show()
 
-#error
-def learning_curves_scikit(train_sizes, train_mean, train_std, test_mean, test_std):
-    plt.subplots(1, figsize=(10,10))
-    plt.plot(train_sizes, train_mean, '--', color="#111111",  label="Training score")
-    plt.plot(train_sizes, test_mean, color="#111111", label="Cross-validation score")
-
-    plt.fill_between(train_sizes, train_mean - train_std, train_mean + train_std, color="#DDDDDD")
-    plt.fill_between(train_sizes, test_mean - test_std, test_mean + test_std, color="#DDDDDD")
-
-    plt.title("Learning Curve")
-    plt.xlabel("Training Set Size"), plt.ylabel("Accuracy Score"), plt.legend(loc="best")
-    plt.tight_layout()
-    plt.show()
-
 def balance_dataset_smote(dataset, output_label, random_state=42, k_neighbors=5):
     """balance dataset
 
@@ -161,4 +146,3 @@ def slipt_and_standardize_dataset(dataset, output_label, test_size=0.2, random_s
     input_test = scaler.transform(input_test)
 
     return input_train, input_test, output_train, output_test
-develop
