@@ -9,6 +9,8 @@ import seaborn as sns
 from imblearn.over_sampling import SMOTE #Para balancear o dataset
 from mlxtend.plotting import plot_learning_curves #Para plotar a curva de erro
 from utils import *
+from sklearn.model_selection import RandomizedSearchCV
+import joblib
 
 
 
@@ -39,8 +41,22 @@ if __name__ == '__main__':
     input_train, input_test, output_train, output_test = train_test_split(dataset_res, ouput_label, test_size=0.2, random_state=23)
     
     #Criando o modelo de árvore de decisão
-    model= RandomForestClassifier()
-    model.fit(input_train, output_train) #Treinamento
+    '''model= RandomForestClassifier()
+    parametros = {'criterion': ['gini', 'entropy', 'log_loss'], 
+        'max_features': ['sqrt', 'log2'],
+        'bootstrap': [True, False],
+        'max_depth': np.arange(10, 30, 5),
+        'n_estimators': [10, 30, 50, 100],
+        'min_samples_split': [2, 5, 10],
+        'min_samples_leaf': [1, 2, 4]}
+
+    clf = RandomizedSearchCV(model, parametros, n_iter = 100, cv = 5, random_state = 1)
+    model = clf.fit(input_train, output_train) #Treinamento
+    joblib.dump(model.best_estimator_, 'randomCV.joblib')
+    '''
+
+    file_model = "/home/vinicius/UFERSA/cilab/euthyroid_sick_syndrome/euthyroid_sick_syndrome-1/randomCV.joblib"
+    model = joblib.load(file_model)
 
     # Fazer a classificação 
     output_model_decision = model.predict(input_test)
