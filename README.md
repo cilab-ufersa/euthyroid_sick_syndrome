@@ -1,5 +1,6 @@
 # Euthyroid sick syndrome classification with machine learning approaches 🔬
 
+In this project, we are going to classify patients with euthyroid sick syndrome (ESS) using machine learning approaches. The dataset is from the [UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/datasets/Euthyroid+Sick+Syndrome+Classification+Data+Set). The dataset contains 3772 instances and 25 attributes. The dataset is imbalanced with 95% of the instances are labeled as "negative" and 5% are labeled as "positive". The goal of this project is to build a model that can classify patients with ESS with high accuracy.
 
 ## Prerequisites
 
@@ -15,10 +16,21 @@ What things you need to have to be able to run:
 $ pip install -r requirements.txt
 ```
 
-## Some labels 
+## About 
+
+Euthyroid is a term used to describe a normal thyroid function. The thyroid is a gland located in the neck that produces hormones that regulate the body's metabolism. These hormones, called triiodothyronine (T3) and thyroxine (T4), help to control the body's energy levels and metabolism, as well as heart rate and body temperature.
+
+A euthyroid state means that the thyroid is functioning normally and producing the appropriate amount of hormones. The levels of T3 and T4 are within the normal range and the thyroid-stimulating hormone (TSH) produced by the pituitary gland is also within the normal range. This is the typical state for most people, and having euthyroid status is important for maintaining overall health and well-being.
+
+However, if the thyroid gland is underactive (hypothyroidism) or overactive (hyperthyroidism) it will affect the levels of T3, T4, and TSH and can cause symptoms such as fatigue, weight gain or loss, changes in heart rate and many others. In those cases, the treatment is usually hormone replacement therapy.
+
+## Some of the attributes in the dataset
 
 - Levothyroxine  (T4 /T4U)
 - Triiodothyronine  (T3)
 - Total  T4 (TT4)
 - Free  T4  Index  (FTI) 
 - Thyroid  Stimulating  Hormone  (TSH)
+
+We used the above attributes to build a model that can classify patients with ESS with high accuracy. These are chosen because they are the most important attributes in the dataset. Moreover, theses attributes can be measured in a blood test. 
+
