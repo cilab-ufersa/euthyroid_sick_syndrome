@@ -34,3 +34,17 @@ However, if the thyroid gland is underactive (hypothyroidism) or overactive (hyp
 
 We used the above attributes to build a model that can classify patients with ESS with high accuracy. These are chosen because they are the most important attributes in the dataset. Moreover, theses attributes can be measured in a blood test. 
 
+## Scientific Developers
+  - [Vinicius Almeida](https://github.com/vinicius-a-almeida): 
+  
+  _vinicius45anacleto@gmail.com_
+  
+  - [Caio Moisés](https://github.com/caiomoises):
+  
+  _caio.cavalcante@alunos.ufersa.edu.br_
+  
+## Support by 
+<div>
+
+  <img src="https://github.com/roscibely/algorithms-and-data-structure/blob/main/Ufersa.png" width="70" height="100">
+</div>
