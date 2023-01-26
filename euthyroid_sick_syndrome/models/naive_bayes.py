@@ -21,6 +21,9 @@ if __name__ == "__main__":
     output_label_dataset = dataset['classification']
     print(output_label_dataset.value_counts()) #1 = sick, 0 = normal
 
+    # Selecionando as colunas que serão utilizadas no modelo
+    dataset = dataset[['age', 'sex', 'sick', 'TSH', 'T3', 'TT4', 'T4U', 'FTI']]
+
     #Balanceamento dos dados 
     sm = SMOTE(random_state=42, k_neighbors=5)
     dataset_res, ouput_label = sm.fit_resample(dataset, output_label_dataset)
@@ -33,7 +36,7 @@ if __name__ == "__main__":
         pickle.dump([input_train, output_train], f)
 
     #Criando e implementando o modelo de decisão
-    model = GaussianNB(var_smoothing=1e-5)
+    model = GaussianNB(var_smoothing=1e-05)
     model.fit(input_train, output_train) #Treinamento
 
     #model.classes_ #classes do banco de dados 
