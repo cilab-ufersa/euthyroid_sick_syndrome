@@ -1,7 +1,6 @@
 import sys
 sys.path.append('euthyroid_sick_syndrome')
 import pandas as pd #Para trabalhar com dataframes               
-import numpy as np #Para trabalhar com arrays
 import matplotlib.pyplot as plt #Para plotar os gráficos
 from sklearn.ensemble import RandomForestClassifier #Para criar o modelo de árvore de decisão
 from utils import *
@@ -13,10 +12,8 @@ import joblib
 if __name__ == '__main__':
 
     #Carregando o dataset
-    dataset = pd.read_csv('/home/vinicius/UFERSA/cilab/euthyroid_sick_syndrome/euthyroid_sick_syndrome-1/euthyroid_sick_syndrome/datasets/euthyroid/euthyroid_final_features.csv')
-    
+    dataset = pd.read_csv('euthyroid_sick_syndrome/datasets/euthyroid/euthyroid_final_features.csv')  
     output_label_dataset = dataset['classification']  #1 = sick, 0 = normal
-
     dataset = dataset[['age', 'sex', 'sick', 'TSH', 'T3', 'TT4', 'T4U', 'FTI']]
 
     #Balanceamento dos dados 
@@ -36,22 +33,24 @@ if __name__ == '__main__':
     model = RandomizedSearchCV(modelRF, parametros, n_iter = 12, cv = 5, random_state = 1)
     model.fit(input_train, output_train) #Treinamento
     joblib.dump(model.best_estimator_, 'randomCV.joblib')
-    print(model.best_estimator_)'''
-    
+    print(model.best_estimator_)'''   
     #melhores parâmetros: class_weight='balanced', criterion='entropy',
     # max_depth=5, min_samples_split=5, n_estimators=20,
     #random_state=10
                        
-                       
-    #model = joblib.load('/home/vinicius/UFERSA/cilab/euthyroid_sick_syndrome/euthyroid_sick_syndrome-1/randomCV.joblib')
-    model = RandomForestClassifier(class_weight = 'balanced', criterion = 'entropy',
-    max_depth = 5, min_samples_split = 5, n_estimators = 20)
+    model = RandomForestClassifier(class_weight = 'balanced_subsample', criterion = 'log_loss',
+    max_depth = 10, min_samples_split = 2, n_estimators = 10, random_state = 10,
+    max_features ='sqrt', min_samples_leaf=5)
+
     model.fit(input_train, output_train)
+
+    joblib.dump(model, 'RandomForestClassifier.sav')
 
     # Fazer a classificação 
     output_model_decision = model.predict(input_test)
 
     #Plotando a matriz de confusão
+    """ 
     plot_confusion_matrix(output_test, output_model_decision, model)
 
     accuracy(output_test, output_model_decision) #Pontuação de acurácia
@@ -63,8 +62,8 @@ if __name__ == '__main__':
     f1(output_test, output_model_decision)
     
     roc(output_test, output_model_decision) #plotando a curva ROC
-
+    """ 
     #plotando a curva de erro
     miss_classification(input_train, output_train, input_test, output_test, model)
 
-    learning_curves(input_train, output_train, input_test, output_test, model)
+    #learning_curves(input_train, output_train, input_test, output_test, model)
