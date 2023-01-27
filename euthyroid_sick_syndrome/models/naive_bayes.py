@@ -13,7 +13,7 @@ from utils import *
 
 if __name__ == "__main__":
     #Carregando o dataset
-    dataset = pd.read_csv('euthyroid_sick_syndrome\euthyroid_sick_syndrome\datasets\euthyroid\euthyroid_final_feature.csv')
+    dataset = pd.read_csv('euthyroid_sick_syndrome\euthyroid_sick_syndrome\datasets\euthyroid\euthyroid_final_features.csv')
 
     output_label_dataset = dataset['classification'] #1 = sick, 0 = normal
 
