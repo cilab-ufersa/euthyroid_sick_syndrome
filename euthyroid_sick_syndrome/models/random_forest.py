@@ -13,7 +13,7 @@ import joblib
 if __name__ == '__main__':
 
     #Carregando o dataset
-    dataset = pd.read_csv('/home/vinicius/UFERSA/cilab/euthyroid_sick_syndrome/euthyroid_sick_syndrome-1/euthyroid_sick_syndrome/datasets/euthyroid/euthyroid_final_dataset.csv')
+    dataset = pd.read_csv('/home/vinicius/UFERSA/cilab/euthyroid_sick_syndrome/euthyroid_sick_syndrome-1/euthyroid_sick_syndrome/datasets/euthyroid/euthyroid_final_features.csv')
     
     output_label_dataset = dataset['classification']  #1 = sick, 0 = normal
 
@@ -36,12 +36,16 @@ if __name__ == '__main__':
     model = RandomizedSearchCV(modelRF, parametros, n_iter = 12, cv = 5, random_state = 1)
     model.fit(input_train, output_train) #Treinamento
     joblib.dump(model.best_estimator_, 'randomCV.joblib')
-    print(model.best_estimator_)
-    '''
-    #melhores parâmetros: class_weight='balanced', criterion='entropy', max_depth=5, n_estimators=20, random_state=10
+    print(model.best_estimator_)'''
+    
+    #melhores parâmetros: class_weight='balanced', criterion='entropy',
+    # max_depth=5, min_samples_split=5, n_estimators=20,
+    #random_state=10
                        
+                       
+    #model = joblib.load('/home/vinicius/UFERSA/cilab/euthyroid_sick_syndrome/euthyroid_sick_syndrome-1/randomCV.joblib')
     model = RandomForestClassifier(class_weight = 'balanced', criterion = 'entropy',
-    max_depth = 5, n_estimators = 10, random_state = 15)
+    max_depth = 5, min_samples_split = 5, n_estimators = 20)
     model.fit(input_train, output_train)
 
     # Fazer a classificação 
