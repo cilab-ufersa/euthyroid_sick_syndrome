@@ -27,6 +27,7 @@ if __name__ == '__main__':
     input_train, input_test, output_train, output_test = slipt_and_standardize_dataset(dataset=dataset_res, output_label=ouput_label)
                                                                 
     #Criando o modelo de árvore de floresta aleatória
+    '''
     parametros = {'min_samples_split': [2, 5, 8],
         'min_samples_leaf': np.arange(1, 5, 1, dtype=int)}
 
@@ -35,10 +36,13 @@ if __name__ == '__main__':
     model = RandomizedSearchCV(modelRF, parametros, n_iter = 12, cv = 5, random_state = 1)
     model.fit(input_train, output_train) #Treinamento
     joblib.dump(model.best_estimator_, 'randomCV.joblib')
-    
-
-    #file_model = "/home/vinicius/UFERSA/cilab/euthyroid_sick_syndrome/euthyroid_sick_syndrome-1/randomCV.joblib"
-    #model = joblib.load(file_model)
+    print(model.best_estimator_)
+    '''
+    #melhores parâmetros: class_weight='balanced', criterion='entropy', max_depth=5, n_estimators=20, random_state=10
+                       
+    model = RandomForestClassifier(class_weight = 'balanced', criterion = 'entropy',
+    max_depth = 5, n_estimators = 10, random_state = 15)
+    model.fit(input_train, output_train)
 
     # Fazer a classificação 
     output_model_decision = model.predict(input_test)
