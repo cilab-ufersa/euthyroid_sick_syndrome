@@ -1,15 +1,15 @@
 import sys
 sys.path.append('euthyroid_sick_syndrome\euthyroid_sick_syndrome')
-import pandas as pd #Para trabalhar com dataframes               
+import pandas as pd #Para trabalhar com dataframes   
 import numpy as np #Para trabalhar com arrays
 import matplotlib.pyplot as plt #Para plotar os gráficos
 from sklearn.naive_bayes import GaussianNB, CategoricalNB #Para criar o modelo de decisão
-from sklearn.model_selection import train_test_split #Para dividir o dataset em treino e teste
-import seaborn as sns 
+from sklearn.model_selection import train_test_split, GridSearchCV #Para dividir o dataset em treino e teste
+import seaborn as sns
 from imblearn.over_sampling import SMOTE #Para balancear o dataset
 from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay #Para plotar a matriz de confusão
 import pickle #para organizar e salvar variaveis em um conjunto
-from utils import * 
+from utils import *
 
 if __name__ == "__main__":
     #Carregando o dataset
@@ -29,8 +29,11 @@ if __name__ == "__main__":
     #with open('NaiveBayes.pkl', 'wb') as f:
     #   pickle.dump([input_train, output_train], f)
 
+    param_grid_nb = {
+    'var_smoothing': np.logspace(0,-9, num=20)
+    }
     #Criando e implementando o modelo de decisão
-    model = GaussianNB(var_smoothing=1e-15)
+    model = GridSearchCV(estimator=GaussianNB(), param_grid=param_grid_nb, verbose=1, cv=10, n_jobs=-1)
     model.fit(input_train, output_train) #Treinamento
 
     #model.classes_ #classes do banco de dados 
@@ -41,7 +44,7 @@ if __name__ == "__main__":
     output_model_decision = model.predict(input_test)
    
 
-    #Plotando 
+    #Plotando
 
     plot_confusion_matrix(output_test, output_model_decision, model)
 
