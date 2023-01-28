@@ -12,7 +12,7 @@ from sklearn.preprocessing import StandardScaler
 from mlxtend.plotting import plot_learning_curves
 from mlxtend.plotting import plot_decision_regions
 from sklearn.decomposition import PCA
-from sklearn.svm import LinearSVC
+from sklearn.ensemble import RandomForestClassifier
 from sklearn.linear_model import LogisticRegression
 from sklearn.preprocessing import StandardScaler
 from sklearn.pipeline import make_pipeline
@@ -31,8 +31,10 @@ if __name__ == '__main__':
     input_train, input_test, output_train, output_test = slipt_and_standardize_dataset(dataset=dataset_res, output_label=ouput_label)
                                                                 
 
-    estimators = [ ('dt', DecisionTreeClassifier(criterion='entropy', random_state=30, class_weight='balanced', max_depth=5)),
-    ('svr', make_pipeline(StandardScaler(),LinearSVC(random_state=42)))
+    estimators = [ ('dt', DecisionTreeClassifier(criterion='entropy', max_features=None, random_state=3, class_weight='balanced', max_depth=6)),
+    ('svr', make_pipeline(StandardScaler(),RandomForestClassifier(class_weight = 'balanced_subsample', criterion = 'log_loss',
+    max_depth = 10, min_samples_split = 2, n_estimators = 10, random_state = 10,
+    max_features ='sqrt', min_samples_leaf=5)))
     ]
     model = StackingClassifier(
     estimators=estimators, final_estimator=LogisticRegression()
