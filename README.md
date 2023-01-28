@@ -34,6 +34,24 @@ However, if the thyroid gland is underactive (hypothyroidism) or overactive (hyp
 
 We used the above attributes to build a model that can classify patients with ESS with high accuracy. These are chosen because they are the most important attributes in the dataset. Moreover, theses attributes can be measured in a blood test. 
 
+## Results
+
+We used 3 different machine learning approaches to build a model that can classify patients with ESS with high accuracy. The approaches are:
+
+  * Naive Bayes
+  * Decision Tree
+  * Random Forest
+
+The results are shown in the table below:
+
+| Approach | Accuracy | Precision | Recall | F1-Score |
+| ------ | ------ | ------ | ------ | ------ |
+| Naive Bayes | x | x | x | x |
+| Decision Tree | 0.9817 | x | x | x |
+| Random Forest | 0.9834 | x | x | x|
+
+
+
 ## Scientific Developers
   - [Vinicius Almeida](https://github.com/vinicius-a-almeida): 
   
@@ -42,6 +60,10 @@ We used the above attributes to build a model that can classify patients with ES
   - [Caio Moisés](https://github.com/caiomoises):
   
   _caio.cavalcante@alunos.ufersa.edu.br_
+
+### Technical and scientific support 
+
+  - [Rosana Rego](https://github.com/roscibely)
   
 ## Support by 
 <div>
