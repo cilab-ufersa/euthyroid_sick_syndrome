@@ -36,9 +36,10 @@ We used the above attributes to build a model that can classify patients with ES
 
 ## Results
 
-We used 3 different machine learning approaches to build a model that can classify patients with ESS with high accuracy. The approaches are:
+We used 4 different machine learning approaches to build a model that can classify patients with ESS with high accuracy. The approaches are:
 
   * Naive Bayes
+  * Logistic Regression
   * Decision Tree
   * Random Forest
 
@@ -47,8 +48,9 @@ The results are shown in the table below:
 | Approach | Accuracy | Precision | Recall | F1-Score |
 | ------ | ------ | ------ | ------ | ------ |
 | Naive Bayes | x | x | x | x |
-| Decision Tree | 0.9817 | x | x | x |
-| Random Forest | 0.9834 | x | x | x|
+| Logistic Regression | 0.9198 | 0.9063 | 0.9321 | 0.9190 |
+| Decision Tree | 0.9817 | 0.9719 | 0.9911 | 0.9814 |
+| Random Forest | 0.9834 | 0.9839 | 0.9821| 0.9830 |
 
 
 
