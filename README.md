@@ -47,7 +47,7 @@ The results are shown in the table below:
 
 | Approach | Accuracy | Precision | Recall | F1-Score |
 | ------ | ------ | ------ | ------ | ------ |
-| Naive Bayes | x | x | x | x |
+| Naive Bayes | 0.8493 | 0.7963 | 0.9285 | 0.8573 |
 | Logistic Regression | 0.9198 | 0.9063 | 0.9321 | 0.9190 |
 | Decision Tree | 0.9817 | 0.9719 | 0.9911 | 0.9814 |
 | Random Forest | 0.9834 | 0.9839 | 0.9821| 0.9830 |
