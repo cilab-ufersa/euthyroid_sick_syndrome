@@ -90,8 +90,8 @@ def roc(output_test, output_model_decision):
     """
     fp, tp, _ = metrics.roc_curve(output_test, output_model_decision)
     plt.plot(fp, tp)
-    plt.ylabel("verdadeiro positivo")
-    plt.xlabel("falso positivo")
+    plt.ylabel("Verdadeiro positivo")
+    plt.xlabel("Falso positivo")
     plt.show()
 
 from mlxtend.plotting import plot_learning_curves #Para plotar a curva de erro

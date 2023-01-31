@@ -9,6 +9,7 @@ import seaborn as sns
 from imblearn.over_sampling import SMOTE #Para balancear o dataset
 from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay #Para plotar a matriz de confusão
 import pickle #para organizar e salvar variaveis em um conjunto
+import joblib
 from utils import *
 
 if __name__ == "__main__":
@@ -30,17 +31,20 @@ if __name__ == "__main__":
     #   pickle.dump([input_train, output_train], f)
 
     param_grid_nb = {
-    'var_smoothing': np.logspace(0,-9, num=20)
+    'var_smoothing': np.logspace(0,-9, num=5)
     }
     #Criando e implementando o modelo de decisão
     model = GridSearchCV(estimator=GaussianNB(), param_grid=param_grid_nb, verbose=1, cv=10, n_jobs=-1)
     model.fit(input_train, output_train) #Treinamento
+    print(model.best_estimator_)
+
+    joblib.dump(model, 'naive_bayes.sav')
 
     #model.classes_ #classes do banco de dados 
     #model.class_count_ #quantidade de atributos por classe
     #model.class_prior_ #probabilidade a piori  
 
-    # Fazer a classificação 
+    # Fazer a classificação
     output_model_decision = model.predict(input_test)
    
 
