@@ -2,6 +2,9 @@ import pandas as pd
 from imblearn.over_sampling import SMOTE
 from sklearn.preprocessing import StandardScaler
 from sklearn.model_selection import train_test_split
+import matplotlib.pyplot as plt
+from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay 
+from sklearn.metrics import accuracy_score 
 
 def prepare_dataset(path_origin, columns_labels, path_destiny):
     """prepare a dataset
@@ -15,27 +18,29 @@ def prepare_dataset(path_origin, columns_labels, path_destiny):
     dataframe.columns=columns_labels
     dataframe.to_csv(path_destiny, index=False)
 
-import matplotlib.pyplot as plt
-from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay #Para plotar a matriz de confusão
 
-def plot_confusion_matrix(output_test, output_model_decision, model):
-    #Plotando a matriz de confusão
-    """ploting confusion matrix
+def plot_confusion_matrix(output_test, output_model_decision, model, title):
+    """plot confusion matrix
 
     Args:
+
         output_test (list): dataset for test
         output_model_decision (list): dataset for train
-        model (list): model class
+        model (string): model name
+        title (string): title
+    Returns:
+        ConfusionMatrixDisplay: confusion matrix
     """
-    cm = confusion_matrix(output_test, output_model_decision)
-    disp = ConfusionMatrixDisplay(confusion_matrix=cm, display_labels=model.classes_)
-    disp.plot()
-    disp.ax_.set_title('Matriz de confusão')
-    disp.ax_.set_xlabel('Classificação prevista')
-    disp.ax_.set_ylabel('Classificação real')
-    plt.show()
 
-from sklearn.metrics import accuracy_score #Para calcular a acuracia do modelo
+    confusionmatrix = confusion_matrix(output_test, output_model_decision)
+    disp = ConfusionMatrixDisplay(confusion_matrix=confusionmatrix, display_labels=['Normal', 'Doente'])
+    fig, ax = plt.subplots(figsize=(3,3))
+    disp.plot(ax=ax, colorbar=False, cmap=plt.cm.Blues)
+    disp.ax_.set_title(title)
+    disp.ax_.set_xlabel('Classificação Predita')
+    disp.ax_.set_ylabel('Classificação Real')
+    return disp
+
 
 def accuracy(output_test, output_model_decision):
     """show accuracy
