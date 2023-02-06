@@ -94,10 +94,11 @@ def roc(output_test, output_model_decision):
         output_model_decision (list): dataset for train
     """
     fp, tp, _ = metrics.roc_curve(output_test, output_model_decision)
-    plt.plot(fp, tp)
-    plt.ylabel("Verdadeiro positivo")
-    plt.xlabel("Falso positivo")
+    roc = plt.plot(fp, tp)
+    plt.xlabel('Classificação Predita')
+    plt.ylabel('Classificação Real')
     plt.show()
+    return roc
 
 from mlxtend.plotting import plot_learning_curves #Para plotar a curva de erro
 
