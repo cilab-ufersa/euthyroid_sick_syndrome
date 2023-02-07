@@ -134,13 +134,26 @@ def miss_classification(input_train, output_train, input_test, output_test, mode
     return fig
 
 def learning_curves(input_train, output_train, input_test, output_test, model, title = 'Curva de aprendizado'):
+    """  Plot learning curves
+
+    Args:
+
+        input_train (array): input train
+        output_train (array): output train
+        input_test (array): input test
+        output_test (array): output test
+        model (object): model
+    Return:
+        fig: plot    
+    """
+
     training_errors, test_errors = plot_learning_curves(X_train=input_train, y_train=output_train, X_test=input_test, y_test=output_test, clf=model, scoring='accuracy')
     fig, ax = plt.subplots(figsize=(3,3))
-    plt.plot(np.arange(10, 101, 10), training_errors, label='treinamento', linewidth=2, linestyle='--')
-    plt.plot(np.arange(10, 101, 10), test_errors, label='teste', linewidth=2)
+    plt.plot(np.arange(10, 101, 10), training_errors, label='Treinamento', linewidth=2, linestyle='--')
+    plt.plot(np.arange(10, 101, 10), test_errors, label='Teste', linewidth=2)
     plt.legend()
     plt.xlabel('Conjunto de treinamento')
-    plt.ylabel('classificação de aprendizado')
+    plt.ylabel('Acurácia')
     plt.title(title)
     plt.grid(True)
     fig = plt.gcf()
