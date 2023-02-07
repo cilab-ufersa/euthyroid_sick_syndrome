@@ -91,24 +91,24 @@ def f1(output_test, output_model_decision):
 
 
 
-def roc(output_test, output_model_decision, title = "Curva roc"):
+def roc(output_test, output_model, title = "Curva ROC"):
     """ploting ROC curve
 
     Args:
         output_test (list): dataset for test
-        output_model_decision (list): dataset for train
+        output_model (list): dataset for train
     """
-    fp, tp, _ = metrics.roc_curve(output_test, output_model_decision)
+    fp, tp, _ = metrics.roc_curve(output_test, output_model)
     fig, ax = plt.subplots(figsize=(3,3))
-    plt.plot(fp, label = "Taxa de falsos positivos", linewidth = 2, linestyle = "--")
-    plt.plot(tp, label = "Taxa de verdadeiros positivos", linewidth = 2, linestyle = "--")
+    plt.plot(fp, tp, label = "ROC", linewidth = 2, linestyle = "--")
     plt.legend()
-    plt.xlabel("Taxa de falsos positivos")
-    plt.ylabel("Taxa de verdadeiros positivos")
-    plt.title('Curva roc')
+    plt.title(title)
+    plt.xlabel("Taxa de Falsos Positivos")
+    plt.ylabel("Taxa de Verdadeiros Positivos")
     plt.grid(True)
     fig = plt.gcf()
     return fig
+
 
 def miss_classification(input_train, output_train, input_test, output_test, model, title='Curva de erro'):
     """ Plot miss classification error
