@@ -91,22 +91,26 @@ def f1(output_test, output_model_decision):
 
 
 
-def roc(output_test, output_model_decision):
+def roc(output_test, output_model, title = "Curva ROC"):
     """ploting ROC curve
 
     Args:
         output_test (list): dataset for test
-        output_model_decision (list): dataset for train
+        output_model (list): dataset for train
     """
-    fp, tp, _ = metrics.roc_curve(output_test, output_model_decision)
-    roc = plt.plot(fp, tp)
-    plt.xlabel('Classificação Predita')
-    plt.ylabel('Classificação Real')
-    plt.show()
-    return roc
+    fp, tp, _ = metrics.roc_curve(output_test, output_model)
+    fig, ax = plt.subplots(figsize=(3,3))
+    plt.plot(fp, tp, label = "ROC", linewidth = 2, linestyle = "--")
+    plt.legend()
+    plt.title(title)
+    plt.xlabel("Taxa de Falsos Positivos")
+    plt.ylabel("Taxa de Verdadeiros Positivos")
+    plt.grid(True)
+    fig = plt.gcf()
+    return fig
 
 
-def miss_classification(input_train, output_train, input_test, output_test, model, title='Curva de aprendizado'):
+def miss_classification(input_train, output_train, input_test, output_test, model, title='Curva de erro'):
     """ Plot miss classification error
 
     Args:
@@ -129,10 +133,31 @@ def miss_classification(input_train, output_train, input_test, output_test, mode
     fig = plt.gcf()
     return fig
 
-#TODO: Must be refactored
-def learning_curves(input_train, output_train, input_test, output_test, model):
-    plot_learning_curves(X_train=input_train, y_train=output_train, X_test=input_test, y_test=output_test, clf=model, scoring='accuracy')
-    plt.show()
+def learning_curves(input_train, output_train, input_test, output_test, model, title = 'Curva de aprendizado'):
+    """  Plot learning curves
+
+    Args:
+
+        input_train (array): input train
+        output_train (array): output train
+        input_test (array): input test
+        output_test (array): output test
+        model (object): model
+    Return:
+        fig: plot    
+    """
+
+    training_errors, test_errors = plot_learning_curves(X_train=input_train, y_train=output_train, X_test=input_test, y_test=output_test, clf=model, scoring='accuracy')
+    fig, ax = plt.subplots(figsize=(3,3))
+    plt.plot(np.arange(10, 101, 10), training_errors, label='Treinamento', linewidth=2, linestyle='--')
+    plt.plot(np.arange(10, 101, 10), test_errors, label='Teste', linewidth=2)
+    plt.legend()
+    plt.xlabel('Conjunto de treinamento')
+    plt.ylabel('Acurácia')
+    plt.title(title)
+    plt.grid(True)
+    fig = plt.gcf()
+    return fig
 
 def balance_dataset_smote(dataset, output_label, random_state=42, k_neighbors=5):
     """balance dataset
