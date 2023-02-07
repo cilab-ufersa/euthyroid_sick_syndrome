@@ -1,7 +1,16 @@
 import pandas as pd
+import numpy as np
 from imblearn.over_sampling import SMOTE
 from sklearn.preprocessing import StandardScaler
 from sklearn.model_selection import train_test_split
+import matplotlib.pyplot as plt
+from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay 
+from sklearn.metrics import accuracy_score 
+from sklearn.metrics import precision_score 
+from sklearn.metrics import recall_score 
+from sklearn.metrics import f1_score 
+from sklearn import metrics 
+from mlxtend.plotting import plot_learning_curves 
 
 def prepare_dataset(path_origin, columns_labels, path_destiny):
     """prepare a dataset
@@ -15,27 +24,29 @@ def prepare_dataset(path_origin, columns_labels, path_destiny):
     dataframe.columns=columns_labels
     dataframe.to_csv(path_destiny, index=False)
 
-import matplotlib.pyplot as plt
-from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay #Para plotar a matriz de confusão
 
-def plot_confusion_matrix(output_test, output_model_decision, model):
-    #Plotando a matriz de confusão
-    """ploting confusion matrix
+def plot_confusion_matrix(output_test, output_model_decision, model, title):
+    """plot confusion matrix
 
     Args:
+
         output_test (list): dataset for test
         output_model_decision (list): dataset for train
-        model (list): model class
+        model (string): model name
+        title (string): title
+    Returns:
+        ConfusionMatrixDisplay: confusion matrix
     """
-    cm = confusion_matrix(output_test, output_model_decision)
-    disp = ConfusionMatrixDisplay(confusion_matrix=cm, display_labels=model.classes_)
-    disp.plot()
-    disp.ax_.set_title('Matriz de confusão')
-    disp.ax_.set_xlabel('Classificação prevista')
-    disp.ax_.set_ylabel('Classificação real')
-    plt.show()
 
-from sklearn.metrics import accuracy_score #Para calcular a acuracia do modelo
+    confusionmatrix = confusion_matrix(output_test, output_model_decision)
+    disp = ConfusionMatrixDisplay(confusion_matrix=confusionmatrix, display_labels=['Normal', 'Doente'])
+    fig, ax = plt.subplots(figsize=(3,3))
+    disp.plot(ax=ax, colorbar=False, cmap=plt.cm.Blues)
+    disp.ax_.set_title(title)
+    disp.ax_.set_xlabel('Classificação Predita')
+    disp.ax_.set_ylabel('Classificação Real')
+    return disp
+
 
 def accuracy(output_test, output_model_decision):
     """show accuracy
@@ -46,7 +57,7 @@ def accuracy(output_test, output_model_decision):
     """
     print("\nA acurácia é de: ", accuracy_score(output_test, output_model_decision))
 
-from sklearn.metrics import precision_score #Para calcular a precisão do modelo
+
 
 def precision(output_test, output_model_decision):
     """show precision
@@ -57,7 +68,7 @@ def precision(output_test, output_model_decision):
     """
     print("A precisão é de: ", precision_score(output_test, output_model_decision))
 
-from sklearn.metrics import recall_score #Para comparar os falsos positivos com os falsos negativos
+
 
 def recall(output_test, output_model_decision):
     """show recall
@@ -68,7 +79,6 @@ def recall(output_test, output_model_decision):
     """
     print("A pontuação de recall é de: ", recall_score(output_test, output_model_decision))
 
-from sklearn.metrics import f1_score #Para calcular a média harmonica entre precisão e recall
 
 def f1(output_test, output_model_decision):
     """show F1
@@ -79,7 +89,7 @@ def f1(output_test, output_model_decision):
     """
     print("A pontuação de F1 é de: ", f1_score(output_test, output_model_decision)) #Pontuação do F1
 
-from sklearn import metrics #Para calcular a curva ROC
+
 
 def roc(output_test, output_model_decision):
     """ploting ROC curve
@@ -89,17 +99,37 @@ def roc(output_test, output_model_decision):
         output_model_decision (list): dataset for train
     """
     fp, tp, _ = metrics.roc_curve(output_test, output_model_decision)
-    plt.plot(fp, tp)
-    plt.ylabel("Verdadeiro positivo")
-    plt.xlabel("Falso positivo")
+    roc = plt.plot(fp, tp)
+    plt.xlabel('Classificação Predita')
+    plt.ylabel('Classificação Real')
     plt.show()
+    return roc
 
-from mlxtend.plotting import plot_learning_curves #Para plotar a curva de erro
 
-def miss_classification(input_train, output_train, input_test, output_test, model):
-    plot_learning_curves(X_train=input_train, y_train=output_train, X_test=input_test, y_test=output_test, clf=model)
-    plt.show()
+def miss_classification(input_train, output_train, input_test, output_test, model, title='Curva de aprendizado'):
+    """ Plot miss classification error
 
+    Args:
+        input_train (array): input train
+        output_train (array): output train
+        input_test (array): input test
+        output_test (array): output test
+        model (object): model
+    Return:
+    """
+    training_errors, test_errors = plot_learning_curves(X_train=input_train, y_train=output_train, X_test=input_test, y_test=output_test, clf=model, print_model=False)
+    fig, ax = plt.subplots(figsize=(3,3))
+    plt.plot(np.arange(10, 101, 10), training_errors, label='Erro de treinamento', linewidth=2, linestyle='--')
+    plt.plot(np.arange(10, 101, 10), test_errors, label='Erro de teste', linewidth=2)
+    plt.legend()
+    plt.xlabel('Conjunto de treinamento')
+    plt.ylabel('Erro de classificação')
+    plt.title(title)
+    plt.grid(True)
+    fig = plt.gcf()
+    return fig
+
+#TODO: Must be refactored
 def learning_curves(input_train, output_train, input_test, output_test, model):
     plot_learning_curves(X_train=input_train, y_train=output_train, X_test=input_test, y_test=output_test, clf=model, scoring='accuracy')
     plt.show()

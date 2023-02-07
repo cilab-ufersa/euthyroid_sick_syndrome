@@ -60,9 +60,9 @@ if __name__ == '__main__':
     recall(output_test, output_model_decision) #Pontuação de recall
 
     f1(output_test, output_model_decision)
-    
+    """
     roc(output_test, output_model_decision) #plotando a curva ROC
-    """ 
+
     #plotando a curva de erro
     miss_classification(input_train, output_train, input_test, output_test, model)
 
