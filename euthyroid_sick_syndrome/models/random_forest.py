@@ -64,8 +64,8 @@ if __name__ == '__main__':
     #roc(output_test, output_model_decision) #plotando a curva ROC
 
     #plotando a curva de erro
-    miss_classification(input_train, output_train, input_test, output_test, model)
+    #miss_classification(input_train, output_train, input_test, output_test, model)
 
     learning_curves(input_train, output_train, input_test, output_test, model)
-    fig = learning_curves(input_train, output_train, input_test, output_test, model, title='Floresta aleatoria')
+    fig = learning_curves(input_train, output_train, input_test, output_test, model, title='Random Forest')
     fig.savefig('aprendizado_random.png', dpi=300, bbox_inches='tight')
