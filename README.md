@@ -55,17 +55,14 @@ The results are shown in the table below:
 [Access the detailed results](https://github.com/cilab-ufersa/euthyroid_sick_syndrome/blob/develop/euthyroid_sick_syndrome/notebooks/IVCoBiCET_results.ipynb)
 
 ## Scientific Developers
-  - [Vinicius Almeida](https://github.com/vinicius-a-almeida): 
-  
+👤 [Vinicius Almeida](https://github.com/vinicius-a-almeida): 
   _vinicius45anacleto@gmail.com_
   
-  - [Caio Moisés](https://github.com/caiomoises):
-  
-  _caio.cavalcante@alunos.ufersa.edu.br_
+👤 [Caio Moisés](https://github.com/caiomoises):  _caio.cavalcante@alunos.ufersa.edu.br_
 
 ### Technical and scientific support 
 
-  - [Rosana Rego](https://github.com/roscibely)
+👤 [Rosana Rego](https://github.com/roscibely)
   
 ## Support by 
 <div>
