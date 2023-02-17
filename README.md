@@ -1,5 +1,9 @@
 # Euthyroid sick syndrome classification with machine learning approaches 🔬
 
+<div>
+  <img src="https://github.com/cilab-ufersa/euthyroid_sick_syndrome/blob/develop/icon.png" width="200" height="200">
+</div>
+
 In this project, we are going to classify patients with euthyroid sick syndrome (ESS) using machine learning approaches. The dataset is from the [UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/datasets/Euthyroid+Sick+Syndrome+Classification+Data+Set). The dataset contains 3772 instances and 25 attributes. The dataset is imbalanced with 95% of the instances are labeled as "negative" and 5% are labeled as "positive". The goal of this project is to build a model that can classify patients with ESS with high accuracy.
 
 ## Prerequisites
