@@ -32,9 +32,9 @@ if __name__ == '__main__':
         # Porcentagem de colunas a serem amostradas aleatoriamente para cada arvore.
         "colsample_bytree": [ 0.3, 0.5 , 0.8 ],
         # reg_alpha promove a regularização l1 para o peso, valores mais altos resultam em modos mais conservadores
-        "reg_alpha": [0, 0.5, 1, 5],
+        "reg_alpha": [5, 5.5, 6, 10],
         # reg_lambda promove a regularização l2 para o peso, valores mais altos resultam em modos mais conservadores
-        "reg_lambda": [0, 0.5, 1, 5]
+        "reg_lambda": [5, 5.5, 6, 10]
         }
 
     # Configuração de pontuação
