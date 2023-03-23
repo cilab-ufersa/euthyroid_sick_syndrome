@@ -71,7 +71,7 @@ if __name__ == '__main__':
     print(f'O RAE (erro relativo absoluto) da predição é: {rae_test}')
 
     # other scikit-learn modules
-    estimator = lgb.LGBMRegressor(num_leaves=31)
+    estimator = lgb.LGBMClassifier(num_leaves=31)
 
     param_grid = {
         'learning_rate': [0.01, 0.1, 1],
@@ -82,3 +82,23 @@ if __name__ == '__main__':
     gbm.fit(X_train, y_train)
 
     print(f'Os melhores parametros encontrados pelo gridsearch são: {gbm.best_params_}')
+
+    print("\n\n\n\n\n")
+    plot_confusion_matrix(y_test, y_pred, gbm, title = 'Matriz Confusão')
+
+    accuracy(y_test, y_pred) #Pontuação de acurácia
+    
+    precision(y_test, y_pred) #Pontuação de precisão
+
+    recall(y_test, y_pred) #Pontuação de recall
+
+    f1(y_test, y_pred)
+    
+    roc(y_test, y_pred) #plotando a curva ROC
+ 
+    #plotando a curva de erro
+    miss_classification(X_train, y_train, X_test, y_test, gbm)
+
+    learning_curves(X_train, y_train, X_test, y_test, gbm)
+    #plotando a curva de erro
+    
