@@ -131,6 +131,7 @@ def miss_classification(input_train, output_train, input_test, output_test, mode
     plt.title(title)
     plt.grid(True)
     fig = plt.gcf()
+    plt.show()
     return fig
 
 def learning_curves(input_train, output_train, input_test, output_test, model, title = 'Curva de aprendizado'):

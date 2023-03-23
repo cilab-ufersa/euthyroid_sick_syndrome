@@ -73,11 +73,21 @@ if __name__ == '__main__':
     # other scikit-learn modules
     estimator = lgb.LGBMClassifier(num_leaves=31)
 
-    param_grid = {
-        'learning_rate': [0.01, 0.1, 1],
-        'n_estimators': [3]
-    }
+    '''param_grid = {
+        'learning_rate': [1],
+        'n_estimators': [3],
+        'num_iterations': [3],
+        'first_metric_only': [True]
+    }'''
 
+    param_grid = {
+        'learning_rate': [1],
+        'max_depth': [20],
+        'n_estimators': [3],
+        'num_leaves': [46],
+        'feature_fraction': [0.5],
+        'subsample': [0.1]
+    }
     gbm = GridSearchCV(estimator, param_grid, cv=3)
     gbm.fit(X_train, y_train)
 
@@ -100,5 +110,5 @@ if __name__ == '__main__':
     miss_classification(X_train, y_train, X_test, y_test, gbm)
 
     learning_curves(X_train, y_train, X_test, y_test, gbm)
-    #plotando a curva de erro
+    
     
