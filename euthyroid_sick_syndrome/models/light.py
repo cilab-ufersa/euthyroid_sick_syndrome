@@ -75,7 +75,7 @@ if __name__ == '__main__':
 
     param_grid = {
         'learning_rate': [0.01, 0.1, 1],
-        'n_estimators': [20, 40]
+        'n_estimators': [3]
     }
 
     gbm = GridSearchCV(estimator, param_grid, cv=3)
