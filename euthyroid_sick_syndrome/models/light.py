@@ -18,30 +18,30 @@ if __name__ == '__main__':
     input_train, input_test, output_train, output_test = slipt_and_standardize_dataset(dataset=dataset_res, output_label=ouput_label)
 
     #treinando o modelo
-    '''
+    
     model = lgb.LGBMClassifier(
         learning_rate = 1,
         max_depth = 11,
-        n_estimators = 5,
-        num_leaves = 30,
-        feature_fraction = 0.47,
-        subsample = 0.01
-    )'''
-    param_grid = {
+        n_estimators = 41,
+        num_leaves = 40,
+        subsample = 0.1 
+    )
+    '''param_grid = {
         'learning_rate': [1],
         'max_depth': np.arange(1, 100, 10),
         'n_estimators': np.arange(1, 100, 10),
         'num_leaves': np.arange(10, 100, 10),
-        'feature_fraction': np.arange(0.1, 1.0, 0.5),
+        #'feature_fraction': np.arange(0.1, 1.0, 0.5),
         'subsample': np.arange(0.1, 1.0, 0.5)
-    }
-    model = GridSearchCV(estimator = lgb.LGBMClassifier(), param_grid = param_grid)
+    }'''
+    #model = GridSearchCV(estimator = lgb.LGBMClassifier(), param_grid = param_grid)
     model.fit(input_train, output_train)
 
     #realizando predições
     output_model_decision = model.predict(input_test)
 
     print("\n\n\n\n\n")
+    #print(model.best_estimator_)
     plot_confusion_matrix(output_test, output_model_decision, model, title = 'Matriz Confusão')
 
     accuracy(output_test, output_model_decision) #Pontuação de acurácia
@@ -58,5 +58,3 @@ if __name__ == '__main__':
     miss_classification(input_train, output_train, input_test, output_test, model)
 
     learning_curves(input_train, output_train, input_test, output_test, model)
-    print(model.best_estimator_)
-    
