@@ -30,11 +30,11 @@ if __name__ == '__main__':
     # Definindo o espaço de busca 
     param_grid_xgb = { 
         # Porcentagem de colunas a serem amostradas aleatoriamente para cada arvore.
-        "colsample_bytree": [ 0.3, 0.5 , 0.8 ],
+        "colsample_bytree": [ 0.8 ],
         # reg_alpha promove a regularização l1 para o peso, valores mais altos resultam em modos mais conservadores
-        "reg_alpha": [5, 5.5, 6, 10],
+        "reg_alpha": [5],
         # reg_lambda promove a regularização l2 para o peso, valores mais altos resultam em modos mais conservadores
-        "reg_lambda": [5, 5.5, 6, 10]
+        "reg_lambda": [5]
         }
 
     # Configuração de pontuação
@@ -53,6 +53,8 @@ if __name__ == '__main__':
     # Após ajustar GridSearchCV no conjunto de dados de treinamento, teremos 48 combinações de hiperparâmetros. Como a validação cruzada de 3 vezes é usada, existem 144 modelos treinados no total.
     model = GridSearchCV(estimator=XGBClassifier(), param_grid=param_grid_xgb, scoring=scoring, refit='recall', n_jobs=-1, cv=kfold, verbose=0)
     model.fit(input_train, output_train) #Treinamento
+
+    model.best_params_
 
     #joblib.dump(model, 'XGBoostClassifier.sav')
 
