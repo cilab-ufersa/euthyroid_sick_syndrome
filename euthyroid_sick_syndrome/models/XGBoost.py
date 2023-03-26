@@ -28,7 +28,7 @@ if __name__ == '__main__':
     input_train, input_test, output_train, output_test = slipt_and_standardize_dataset(dataset=dataset_res, output_label=ouput_label)
 
     # Definindo o espaço de busca 
-    param_grid_xgb = { 
+    '''param_grid_xgb = { 
         # Porcentagem de colunas a serem amostradas aleatoriamente para cada arvore.
         "colsample_bytree": [ 0.8 ],
         # reg_alpha promove a regularização l1 para o peso, valores mais altos resultam em modos mais conservadores
@@ -38,23 +38,18 @@ if __name__ == '__main__':
         }
 
     # Configuração de pontuação
-    scoring = ['recall']
+    #scoring = ['recall']
 
     # Configuração para validação cruzada
-    kfold = StratifiedKFold(n_splits=3, shuffle=True, random_state=0)
+    #kfold = StratifiedKFold(n_splits=3, shuffle=True, random_state=0)'''
 
-    # estimador - Significa que estamos usando o XGBoost como modelo.
-    # param_grid_xgb - Leva nosso espaço de pesquisa pré-definido para a pesquisa em grade.
-    # scoring - Define a metrica de avaliação de desempenho. Como definimos a pontuação como 'recall', o modelo usará o recall como metrica de avaliação.
-    # refit - Permite reajustar o modelo com os melhores parâmetros em todo o conjunto de dados de treinamento.
-    # n_jobs - Significa que o processamento paralelo esta usando todos os processadores.
-    # cv - Leva o que definimos para StratifiedkFold
-    # verbose - controla o numero de mensagens retornadas pela pesquisa em grade. Quanto maior o número, mais informações são retornadas. Se verbose = 0, isso significa uma saida silenciosa.
-    # Após ajustar GridSearchCV no conjunto de dados de treinamento, teremos 48 combinações de hiperparâmetros. Como a validação cruzada de 3 vezes é usada, existem 144 modelos treinados no total.
-    model = GridSearchCV(estimator=XGBClassifier(), param_grid=param_grid_xgb, scoring=scoring, refit='recall', n_jobs=-1, cv=kfold, verbose=0)
+    model = XGBClassifier(
+        colsample_bytree = 0.8,
+        reg_alpha = 5,
+        reg_lambda = 5)
     model.fit(input_train, output_train) #Treinamento
 
-    model.best_params_
+    #model.best_params_
 
     #joblib.dump(model, 'XGBoostClassifier.sav')
 
