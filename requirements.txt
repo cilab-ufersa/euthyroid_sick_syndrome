@@ -6,3 +6,4 @@ imblearn
 mlxtend
 xgboost
 joblib
+lightgbm==3.3.5
