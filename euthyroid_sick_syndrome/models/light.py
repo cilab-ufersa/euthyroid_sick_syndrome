@@ -20,11 +20,11 @@ if __name__ == '__main__':
     #treinando o modelo
     
     model = lgb.LGBMClassifier(
-        learning_rate = 1,
-        max_depth = 11,
-        n_estimators = 41,
-        num_leaves = 40,
-        subsample = 0.1 
+        learning_rate = 0.3,
+        max_depth = 15,
+        n_estimators = 5,
+        num_leaves = 15,  #10
+        subsample = 0.5 
     )
     '''param_grid = {
         'learning_rate': [1],
@@ -42,7 +42,7 @@ if __name__ == '__main__':
 
     print("\n\n\n\n\n")
     #print(model.best_estimator_)
-    plot_confusion_matrix(output_test, output_model_decision, model, title = 'Matriz Confusão')
+    #plot_confusion_matrix(output_test, output_model_decision, model, title = 'Matriz Confusão')
 
     accuracy(output_test, output_model_decision) #Pontuação de acurácia
     
@@ -57,4 +57,4 @@ if __name__ == '__main__':
     #plotando a curva de erro
     miss_classification(input_train, output_train, input_test, output_test, model)
 
-    learning_curves(input_train, output_train, input_test, output_test, model)
+    #learning_curves(input_train, output_train, input_test, output_test, model)
