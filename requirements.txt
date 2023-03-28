@@ -6,5 +6,5 @@ imblearn==0.9.1
 mlxtend==0.21.0
 joblib==1.2.0
 lightgbm==3.3.5
-xgboost
+xgboost==1.7.4
 
