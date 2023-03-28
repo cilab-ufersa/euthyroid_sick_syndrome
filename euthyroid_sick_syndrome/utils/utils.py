@@ -25,7 +25,7 @@ def prepare_dataset(path_origin, columns_labels, path_destiny):
     dataframe.to_csv(path_destiny, index=False)
 
 
-def plot_confusion_matrix(output_test, output_model_decision, model, title):
+def plot_confusion_matrix(output_test, output_model_decision, model, title, labelx='Classificação Predita', labely='Classificação Real', display_labels=['Normal', 'Doente']):
     """plot confusion matrix
 
     Args:
@@ -39,12 +39,12 @@ def plot_confusion_matrix(output_test, output_model_decision, model, title):
     """
 
     confusionmatrix = confusion_matrix(output_test, output_model_decision)
-    disp = ConfusionMatrixDisplay(confusion_matrix=confusionmatrix, display_labels=['Normal', 'Doente'])
+    disp = ConfusionMatrixDisplay(confusion_matrix=confusionmatrix, display_labels=display_labels)
     fig, ax = plt.subplots(figsize=(3,3))
     disp.plot(ax=ax, colorbar=False, cmap=plt.cm.Blues)
     disp.ax_.set_title(title)
-    disp.ax_.set_xlabel('Classificação Predita')
-    disp.ax_.set_ylabel('Classificação Real')
+    disp.ax_.set_xlabel(labelx)
+    disp.ax_.set_ylabel(labely)
     return disp
 
 
@@ -110,7 +110,7 @@ def roc(output_test, output_model, title = "Curva ROC"):
     return fig
 
 
-def miss_classification(input_train, output_train, input_test, output_test, model, title='Curva de erro'):
+def miss_classification(input_train, output_train, input_test, output_test, model, title='Curva de erro', labelx='Conjunto de treinamento', labely='Erro de classificação', label1='Erro de treinamento', label2='Erro de teste'):
     """ Plot miss classification error
 
     Args:
@@ -123,17 +123,18 @@ def miss_classification(input_train, output_train, input_test, output_test, mode
     """
     training_errors, test_errors = plot_learning_curves(X_train=input_train, y_train=output_train, X_test=input_test, y_test=output_test, clf=model, print_model=False)
     fig, ax = plt.subplots(figsize=(3,3))
-    plt.plot(np.arange(10, 101, 10), training_errors, label='Erro de treinamento', linewidth=2, linestyle='--')
-    plt.plot(np.arange(10, 101, 10), test_errors, label='Erro de teste', linewidth=2)
+    plt.plot(np.arange(10, 101, 10), training_errors, label=label1, linewidth=2, linestyle='--')
+    plt.plot(np.arange(10, 101, 10), test_errors, label=label2, linewidth=2)
     plt.legend()
-    plt.xlabel('Conjunto de treinamento')
-    plt.ylabel('Erro de classificação')
+    plt.xlabel(labelx)
+    plt.ylabel(labely)
     plt.title(title)
     plt.grid(True)
     fig = plt.gcf()
+    plt.show()
     return fig
 
-def learning_curves(input_train, output_train, input_test, output_test, model, title = 'Curva de aprendizado'):
+def learning_curves(input_train, output_train, input_test, output_test, model, title = 'Curva de aprendizado',  labelx='Conjunto de treinamento', labely='Acurácia'):
     """  Plot learning curves
 
     Args:
@@ -152,8 +153,8 @@ def learning_curves(input_train, output_train, input_test, output_test, model, t
     plt.plot(np.arange(10, 101, 10), training_errors, label='Treinamento', linewidth=2, linestyle='--')
     plt.plot(np.arange(10, 101, 10), test_errors, label='Teste', linewidth=2)
     plt.legend()
-    plt.xlabel('Conjunto de treinamento')
-    plt.ylabel('Acurácia')
+    plt.xlabel(labelx)
+    plt.ylabel(labely)
     plt.title(title)
     plt.grid(True)
     fig = plt.gcf()

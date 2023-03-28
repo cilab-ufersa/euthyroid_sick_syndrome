@@ -17,6 +17,7 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.preprocessing import StandardScaler
 from sklearn.pipeline import make_pipeline
 from sklearn.ensemble import StackingClassifier
+from xgboost import XGBClassifier
 from utils.utils import * 
 
 if __name__ == '__main__':
@@ -37,7 +38,7 @@ if __name__ == '__main__':
     max_features ='sqrt', min_samples_leaf=5)))
     ]
     model = StackingClassifier(
-    estimators=estimators, final_estimator=LogisticRegression()
+    estimators=estimators, final_estimator=XGBClassifier(learning_rate=0.1, max_depth=5, n_estimators=100, random_state=42, use_label_encoder=False, eval_metric='mlogloss')
     )
 
 
