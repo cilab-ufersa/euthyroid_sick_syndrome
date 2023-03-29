@@ -53,7 +53,7 @@ if __name__ == '__main__':
 
     #model.best_params_
 
-    joblib.dump(model, 'XGBoostClassifier.sav')
+    joblib.dump(model, 'euthyroid_sick_syndrome\models_file\XGBoostClassifier.joblib')
 
     # Fazer a classificação
     output_model_decision = model.predict(input_test)
