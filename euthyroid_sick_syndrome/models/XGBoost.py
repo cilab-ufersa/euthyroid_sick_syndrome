@@ -53,12 +53,12 @@ if __name__ == '__main__':
 
     #model.best_params_
 
-    #joblib.dump(model, 'XGBoostClassifier.sav')
+    joblib.dump(model, 'XGBoostClassifier.sav')
 
     # Fazer a classificação
     output_model_decision = model.predict(input_test)
 
-    pickle.dump(model, open(file_name, "wb"))
+    #pickle.dump(model, open(file_name, "wb"))
     #model.save_model('XGBoost.sav')
 
     #Plotando
