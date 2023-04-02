@@ -38,7 +38,9 @@ if __name__ == '__main__':
     max_features ='sqrt', min_samples_leaf=5)))
     ]
     model = StackingClassifier(
-    estimators=estimators, final_estimator=XGBClassifier(learning_rate=0.1, max_depth=5, n_estimators=100, random_state=42, use_label_encoder=False, eval_metric='mlogloss')
+    estimators=estimators, final_estimator=XGBClassifier(colsample_bytree = 0.8,
+        reg_alpha = 5,
+        reg_lambda = 5)
     )
 
 
