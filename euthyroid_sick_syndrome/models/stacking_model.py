@@ -18,6 +18,7 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.pipeline import make_pipeline
 from sklearn.ensemble import StackingClassifier
 from xgboost import XGBClassifier
+import lightgbm as lgb
 from utils.utils import * 
 
 if __name__ == '__main__':
@@ -33,6 +34,7 @@ if __name__ == '__main__':
                                                                 
 
     estimators = [ ('dt', DecisionTreeClassifier(criterion='entropy', max_features=None, random_state=3, class_weight='balanced', max_depth=6)),
+    ('lg', lgb.LGBMClassifier(learning_rate = 0.3, max_depth = 15, n_estimators = 5, num_leaves = 15, subsample = 0.5))
     ('svr', make_pipeline(StandardScaler(),RandomForestClassifier(class_weight = 'balanced_subsample', criterion = 'log_loss',
     max_depth = 10, min_samples_split = 2, n_estimators = 10, random_state = 10,
     max_features ='sqrt', min_samples_leaf=5)))
