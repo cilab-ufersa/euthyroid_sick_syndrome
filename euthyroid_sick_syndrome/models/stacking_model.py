@@ -33,15 +33,21 @@ if __name__ == '__main__':
     input_train, input_test, output_train, output_test = slipt_and_standardize_dataset(dataset=dataset_res, output_label=ouput_label)
                                                                 
 
-    estimators = [ ('lg', lgb.LGBMClassifier(learning_rate = 0.3, max_depth = 15, n_estimators = 5, num_leaves = 15, subsample = 0.5)),
-    ('svr', make_pipeline(StandardScaler(),RandomForestClassifier(class_weight = 'balanced_subsample', criterion = 'log_loss',
+    estimators = [ ('xgb', XGBClassifier(colsample_bytree = 0.8, reg_alpha = 5, reg_lambda = 5)),
+    #('lg', lgb.LGBMClassifier(learning_rate = 0.3, max_depth = 15, n_estimators = 5, num_leaves = 15, subsample = 0.5)),
+    ('svr', make_pipeline(RandomForestClassifier(class_weight = 'balanced_subsample', criterion = 'log_loss',
     max_depth = 10, min_samples_split = 2, n_estimators = 10, random_state = 10,
     max_features ='sqrt', min_samples_leaf=5)))
     ]
     model = StackingClassifier(
-    estimators=estimators, final_estimator=XGBClassifier(colsample_bytree = 0.8,
-        reg_alpha = 5,
-        reg_lambda = 5)
+    estimators=estimators, final_estimator=RandomForestClassifier(class_weight = 'balanced_subsample', criterion = 'log_loss',
+    max_depth = 10, min_samples_split = 2, n_estimators = 10, random_state = 10,
+    max_features ='sqrt', min_samples_leaf=5)
+    
+    
+    #XGBClassifier(colsample_bytree = 0.8,
+    #    reg_alpha = 5,
+    #    reg_lambda = 5)
     )
 
 
@@ -50,6 +56,15 @@ if __name__ == '__main__':
     
     output_model_decision = model.predict(input_test)
 
+    accuracy(output_test, output_model_decision) #Pontuação de acurácia
+    
+    precision(output_test, output_model_decision) #Pontuação de precisão
+
+    recall(output_test, output_model_decision) #Pontuação de recall
+
+    f1(output_test, output_model_decision)
+    
+    roc(output_test, output_model_decision) #plotando a curva ROC
 
 
     cm = confusion_matrix(output_test, output_model_decision)
@@ -69,6 +84,5 @@ if __name__ == '__main__':
     plot_learning_curves(input_train, output_train, input_test, output_test, model, 
     scoring='accuracy')
     plt.show()
-
 
     
