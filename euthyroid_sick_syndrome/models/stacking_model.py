@@ -20,6 +20,7 @@ from sklearn.ensemble import StackingClassifier
 from xgboost import XGBClassifier
 import lightgbm as lgb
 from utils.utils import * 
+import joblib
 
 if __name__ == '__main__':
     dataset = dataset = pd.read_csv('euthyroid_sick_syndrome\datasets\euthyroid\euthyroid_final_features.csv')
@@ -53,6 +54,7 @@ if __name__ == '__main__':
 
     model.fit(input_train, output_train) 
 
+    joblib.dump(model, 'euthyroid_sick_syndrome\models_file\StackingClassifier.sav')
     
     output_model_decision = model.predict(input_test)
 
@@ -64,7 +66,7 @@ if __name__ == '__main__':
 
     f1(output_test, output_model_decision)
     
-    roc(output_test, output_model_decision) #plotando a curva ROC
+    #roc(output_test, output_model_decision) #plotando a curva ROC
 
 
     cm = confusion_matrix(output_test, output_model_decision)
