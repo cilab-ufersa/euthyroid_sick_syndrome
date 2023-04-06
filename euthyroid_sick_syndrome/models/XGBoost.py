@@ -9,9 +9,11 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 from utils import *
-from sklearn.model_selection import GridSearchCV
-from sklearn.model_selection import StratifiedKFold
+#from sklearn.model_selection import GridSearchCV
+#from sklearn.model_selection import StratifiedKFold
 import joblib
+import pickle
+file_name = "XGBoost.joblib"
 
 if __name__ == '__main__':
 
@@ -51,10 +53,13 @@ if __name__ == '__main__':
 
     #model.best_params_
 
-    #joblib.dump(model, 'XGBoostClassifier.sav')
+    joblib.dump(model, 'euthyroid_sick_syndrome\models_file\XGBoostClassifier.joblib')
 
     # Fazer a classificação
     output_model_decision = model.predict(input_test)
+
+    #pickle.dump(model, open(file_name, "wb"))
+    #model.save_model('XGBoost.sav')
 
     #Plotando
 

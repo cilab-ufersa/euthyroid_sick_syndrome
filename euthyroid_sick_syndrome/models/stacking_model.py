@@ -18,7 +18,9 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.pipeline import make_pipeline
 from sklearn.ensemble import StackingClassifier
 from xgboost import XGBClassifier
+import lightgbm as lgb
 from utils.utils import * 
+import joblib
 
 if __name__ == '__main__':
     dataset = dataset = pd.read_csv('euthyroid_sick_syndrome\datasets\euthyroid\euthyroid_final_features.csv')
@@ -32,21 +34,39 @@ if __name__ == '__main__':
     input_train, input_test, output_train, output_test = slipt_and_standardize_dataset(dataset=dataset_res, output_label=ouput_label)
                                                                 
 
-    estimators = [ ('dt', DecisionTreeClassifier(criterion='entropy', max_features=None, random_state=3, class_weight='balanced', max_depth=6)),
-    ('svr', make_pipeline(StandardScaler(),RandomForestClassifier(class_weight = 'balanced_subsample', criterion = 'log_loss',
+    estimators = [ ('xgb', XGBClassifier(colsample_bytree = 0.8, reg_alpha = 5, reg_lambda = 5)),
+    #('lg', lgb.LGBMClassifier(learning_rate = 0.3, max_depth = 15, n_estimators = 5, num_leaves = 15, subsample = 0.5)),
+    ('svr', make_pipeline(RandomForestClassifier(class_weight = 'balanced_subsample', criterion = 'log_loss',
     max_depth = 10, min_samples_split = 2, n_estimators = 10, random_state = 10,
     max_features ='sqrt', min_samples_leaf=5)))
     ]
     model = StackingClassifier(
-    estimators=estimators, final_estimator=XGBClassifier(learning_rate=0.1, max_depth=5, n_estimators=100, random_state=42, use_label_encoder=False, eval_metric='mlogloss')
+    estimators=estimators, final_estimator=RandomForestClassifier(class_weight = 'balanced_subsample', criterion = 'log_loss',
+    max_depth = 10, min_samples_split = 2, n_estimators = 10, random_state = 10,
+    max_features ='sqrt', min_samples_leaf=5)
+    
+    
+    #XGBClassifier(colsample_bytree = 0.8,
+    #    reg_alpha = 5,
+    #    reg_lambda = 5)
     )
 
 
     model.fit(input_train, output_train) 
 
+    joblib.dump(model, 'euthyroid_sick_syndrome\models_file\StackingClassifier.sav')
     
     output_model_decision = model.predict(input_test)
 
+    accuracy(output_test, output_model_decision) #Pontuação de acurácia
+    
+    precision(output_test, output_model_decision) #Pontuação de precisão
+
+    recall(output_test, output_model_decision) #Pontuação de recall
+
+    f1(output_test, output_model_decision)
+    
+    #roc(output_test, output_model_decision) #plotando a curva ROC
 
 
     cm = confusion_matrix(output_test, output_model_decision)
@@ -66,6 +86,5 @@ if __name__ == '__main__':
     plot_learning_curves(input_train, output_train, input_test, output_test, model, 
     scoring='accuracy')
     plt.show()
-
 
     

@@ -5,6 +5,7 @@ import pandas as pd
 from utils import *
 from sklearn.model_selection import GridSearchCV
 import numpy as np
+import joblib
 
 if __name__ == '__main__':
     #Carregando o dataset
@@ -36,10 +37,11 @@ if __name__ == '__main__':
     }'''
     #model = GridSearchCV(estimator = lgb.LGBMClassifier(), param_grid = param_grid)
     model.fit(input_train, output_train)
+    joblib.dump(model, 'euthyroid_sick_syndrome\models_file\LightGBMClassifier.pkl')
 
     #realizando predições
     output_model_decision = model.predict(input_test)
-
+    
     print("\n\n\n\n\n")
     #print(model.best_estimator_)
     #plot_confusion_matrix(output_test, output_model_decision, model, title = 'Matriz Confusão')
