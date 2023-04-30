@@ -26,7 +26,7 @@ print("importância das features: \n", model.feature_importances_)
 
 
 # Definir o RFE com 3 recursos a serem selecionados, ou seja ele está selecionando as 3 melhores features
-rfe = RFE(estimator=model, n_features_to_select=3)
+rfe = RFE(estimator=model, n_features_to_select = 8)
 
 # Executar o RFE no conjunto de treinamento
 rfe.fit(input_train, output_train)
@@ -46,3 +46,6 @@ model.fit(input_train_rfe, output_train)
 
 y_pred = model.predict(X_test_rfe)
 accuracy(output_test, y_pred)
+
+
+#features [age, sex, on_thyroxine, TSH, T3, TT4, T4U, FTI]
