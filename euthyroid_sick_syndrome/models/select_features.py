@@ -6,7 +6,7 @@ from sklearn.feature_selection import RFE
 from utils import *
 
 #Carregando o dataset
-dataset = pd.read_csv('euthyroid_sick_syndrome\datasets\euthyroid\euthyroid_final_features.csv')
+dataset = pd.read_csv('/home/vinicius/UFERSA/cilab/euthyroid_sick_syndrome/euthyroid_sick_syndrome/datasets/euthyroid/euthyroid_final_features.csv')
 output_label_dataset = dataset['classification']
 dataset = dataset.drop(['classification'], axis=1)
 
@@ -34,6 +34,9 @@ rfe.fit(input_train, output_train)
 # Verificando os recursos selecionados
 for i in range(input_train.shape[1]):
  print('Coluna: %d, Selecionado %s, Rank: %.3f' % (i, rfe.support_[i], rfe.ranking_[i]))
+
+#mostrando as features selecionadas
+print(dataset.columns[rfe.support_])
 
 # Selecionar os recursos do conjunto de treinamento e teste
 input_train_rfe = rfe.transform(input_train)
