@@ -24,6 +24,11 @@ max_features ='sqrt', min_samples_leaf=5)
 model.fit(input_train, output_train)
 print("importância das features: \n", model.feature_importances_)
 
+import seaborn as sns
+plt.figure(figsize=(22,20))
+cor = dataset.corr()
+sns.heatmap(cor, annot=True, cmap=plt.cm.Reds)
+plt.show()
 
 # Definir o RFE com 3 recursos a serem selecionados, ou seja ele está selecionando as 3 melhores features
 rfe = RFE(estimator=model, n_features_to_select = 8)
