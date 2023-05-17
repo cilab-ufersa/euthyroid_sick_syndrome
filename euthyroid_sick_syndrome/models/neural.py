@@ -22,12 +22,6 @@ dataset_res, ouput_label = balance_dataset_smote(dataset, output_label_dataset, 
 # X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=3, stratify=y)
 input_train, input_test, output_train, output_test = slipt_and_standardize_dataset(dataset=dataset_res, output_label=ouput_label)
 
-# Padronizando os dados de entrada (X) para média 0 e desvio padrão 1
-sc = StandardScaler()
-sc.fit(input_train)
-X_train_std = sc.transform(input_train)
-X_test_std = sc.transform(input_test)
-
 # Convertendo as classes em valores numéricos 
 # Uma classe será representada por um vetor de 3 posições, onde apenas uma posição será 1 e as outras 0
 # Exemplo: Iris-setosa = [1, 0, 0]
@@ -64,6 +58,11 @@ plt.ylabel('MSE')
 plt.xlabel('Epocas')
 plt.legend(['Treino', 'Teste'], loc='upper left')
 plt.show()
+
+
+#padronizando os dados de teste
+sc = StandardScaler()
+sc.fit(input_train)
 
 teste = [[45, 0, 0, 1.9, 1.0,	82.0,	0.73,	112.0]]
 teste = sc.transform(teste)
