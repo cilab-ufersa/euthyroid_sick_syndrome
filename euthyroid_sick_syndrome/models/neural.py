@@ -22,15 +22,6 @@ dataset_res, ouput_label = balance_dataset_smote(dataset, output_label_dataset, 
 # X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=3, stratify=y)
 input_train, input_test, output_train, output_test = slipt_and_standardize_dataset(dataset=dataset_res, output_label=ouput_label)
 
-# Convertendo as classes em valores numéricos 
-# Uma classe será representada por um vetor de 3 posições, onde apenas uma posição será 1 e as outras 0
-# Exemplo: Iris-setosa = [1, 0, 0]
-#          Iris-versicolor = [0, 1, 0]
-#          Iris-virginica = [0, 0, 1]
-# Fazemos isso, pois o algoritmo de aprendizado de máquina espera os dados sejam representadas por valores numéricos
-y_train_onehot = pd.get_dummies(output_train).values
-y_test_onehot = pd.get_dummies(output_test).values
-
 # Modelo de rede perceptron multicamadas com uma camada oculta de 64 neurônios
 # e camada de saída com 3 neurônios (3 classes)
 model = tf.keras.models.Sequential()
