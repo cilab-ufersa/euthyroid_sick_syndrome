@@ -1,0 +1,1111 @@
+2023-08-07 11:10:01,267:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2023-08-07 11:10:01,267:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2023-08-07 11:10:01,268:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2023-08-07 11:10:01,268:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2023-08-07 11:10:01,638:INFO:PyCaret ClassificationExperiment
+2023-08-07 11:10:01,638:INFO:Logging name: clf-default-name
+2023-08-07 11:10:01,638:INFO:ML Usecase: MLUsecase.CLASSIFICATION
+2023-08-07 11:10:01,638:INFO:version 3.0.4
+2023-08-07 11:10:01,638:INFO:Initializing setup()
+2023-08-07 11:10:01,638:INFO:self.USI: a4b7
+2023-08-07 11:10:01,638:INFO:self._variable_keys: {'gpu_n_jobs_param', 'target_param', 'fold_groups_param', 'fold_shuffle_param', 'is_multiclass', 'USI', '_available_plots', 'fix_imbalance', 'n_jobs_param', '_ml_usecase', 'log_plots_param', 'idx', 'y_test', 'logging_param', 'pipeline', 'memory', 'y', 'html_param', 'X', 'exp_id', 'X_test', 'y_train', 'gpu_param', 'seed', 'exp_name_log', 'fold_generator', 'X_train', 'data'}
+2023-08-07 11:10:01,638:INFO:Checking environment
+2023-08-07 11:10:01,639:INFO:python_version: 3.10.6
+2023-08-07 11:10:01,639:INFO:python_build: ('main', 'Nov 14 2022 16:10:14')
+2023-08-07 11:10:01,639:INFO:machine: x86_64
+2023-08-07 11:10:01,639:INFO:platform: Linux-6.0.12-76060006-generic-x86_64-with-glibc2.35
+2023-08-07 11:10:01,639:INFO:Memory: svmem(total=10303471616, available=4609294336, percent=55.3, used=4881002496, free=2364362752, active=2073378816, inactive=4535549952, buffers=199114752, cached=2858991616, shared=71020544, slab=355209216)
+2023-08-07 11:10:01,640:INFO:Physical Core: 4
+2023-08-07 11:10:01,640:INFO:Logical Core: 8
+2023-08-07 11:10:01,640:INFO:Checking libraries
+2023-08-07 11:10:01,640:INFO:System:
+2023-08-07 11:10:01,640:INFO:    python: 3.10.6 (main, Nov 14 2022, 16:10:14) [GCC 11.3.0]
+2023-08-07 11:10:01,640:INFO:executable: /home/vinicius/UFERSA/cilab/euthyroid_sick_syndrome/cilab/bin/python
+2023-08-07 11:10:01,640:INFO:   machine: Linux-6.0.12-76060006-generic-x86_64-with-glibc2.35
+2023-08-07 11:10:01,641:INFO:PyCaret required dependencies:
+2023-08-07 11:10:01,644:INFO:                 pip: 22.0.2
+2023-08-07 11:10:01,644:INFO:          setuptools: 59.6.0
+2023-08-07 11:10:01,644:INFO:             pycaret: 3.0.4
+2023-08-07 11:10:01,644:INFO:             IPython: 8.9.0
+2023-08-07 11:10:01,644:INFO:          ipywidgets: 8.1.0
+2023-08-07 11:10:01,644:INFO:                tqdm: 4.65.0
+2023-08-07 11:10:01,644:INFO:               numpy: 1.23.5
+2023-08-07 11:10:01,644:INFO:              pandas: 1.4.4
+2023-08-07 11:10:01,644:INFO:              jinja2: 3.1.2
+2023-08-07 11:10:01,644:INFO:               scipy: 1.10.0
+2023-08-07 11:10:01,645:INFO:              joblib: 1.2.0
+2023-08-07 11:10:01,645:INFO:             sklearn: 1.2.1
+2023-08-07 11:10:01,645:INFO:                pyod: 1.1.0
+2023-08-07 11:10:01,645:INFO:            imblearn: 0.8.1
+2023-08-07 11:10:01,645:INFO:   category_encoders: 2.6.1
+2023-08-07 11:10:01,645:INFO:            lightgbm: 3.3.5
+2023-08-07 11:10:01,645:INFO:               numba: 0.57.1
+2023-08-07 11:10:01,645:INFO:            requests: 2.31.0
+2023-08-07 11:10:01,645:INFO:          matplotlib: 3.4.3
+2023-08-07 11:10:01,645:INFO:          scikitplot: 0.3.7
+2023-08-07 11:10:01,645:INFO:         yellowbrick: 1.5
+2023-08-07 11:10:01,645:INFO:              plotly: 5.15.0
+2023-08-07 11:10:01,645:INFO:    plotly-resampler: Not installed
+2023-08-07 11:10:01,645:INFO:             kaleido: 0.2.1
+2023-08-07 11:10:01,645:INFO:           schemdraw: 0.15
+2023-08-07 11:10:01,645:INFO:         statsmodels: 0.14.0
+2023-08-07 11:10:01,645:INFO:              sktime: 0.21.0
+2023-08-07 11:10:01,645:INFO:               tbats: 1.1.3
+2023-08-07 11:10:01,645:INFO:            pmdarima: 2.0.3
+2023-08-07 11:10:01,645:INFO:              psutil: 5.9.4
+2023-08-07 11:10:01,645:INFO:          markupsafe: 2.1.3
+2023-08-07 11:10:01,645:INFO:             pickle5: Not installed
+2023-08-07 11:10:01,645:INFO:         cloudpickle: 2.2.1
+2023-08-07 11:10:01,645:INFO:         deprecation: 2.1.0
+2023-08-07 11:10:01,646:INFO:              xxhash: 3.3.0
+2023-08-07 11:10:01,646:INFO:           wurlitzer: 3.0.3
+2023-08-07 11:10:01,646:INFO:PyCaret optional dependencies:
+2023-08-07 11:10:01,669:INFO:                shap: Not installed
+2023-08-07 11:10:01,669:INFO:           interpret: Not installed
+2023-08-07 11:10:01,669:INFO:                umap: Not installed
+2023-08-07 11:10:01,669:INFO:    pandas_profiling: Not installed
+2023-08-07 11:10:01,670:INFO:  explainerdashboard: Not installed
+2023-08-07 11:10:01,670:INFO:             autoviz: Not installed
+2023-08-07 11:10:01,670:INFO:           fairlearn: Not installed
+2023-08-07 11:10:01,670:INFO:          deepchecks: Not installed
+2023-08-07 11:10:01,670:INFO:             xgboost: Not installed
+2023-08-07 11:10:01,670:INFO:            catboost: Not installed
+2023-08-07 11:10:01,670:INFO:              kmodes: Not installed
+2023-08-07 11:10:01,670:INFO:             mlxtend: 0.21.0
+2023-08-07 11:10:01,670:INFO:       statsforecast: Not installed
+2023-08-07 11:10:01,670:INFO:        tune_sklearn: Not installed
+2023-08-07 11:10:01,670:INFO:                 ray: Not installed
+2023-08-07 11:10:01,670:INFO:            hyperopt: Not installed
+2023-08-07 11:10:01,670:INFO:              optuna: Not installed
+2023-08-07 11:10:01,670:INFO:               skopt: Not installed
+2023-08-07 11:10:01,670:INFO:              mlflow: Not installed
+2023-08-07 11:10:01,670:INFO:              gradio: Not installed
+2023-08-07 11:10:01,670:INFO:             fastapi: Not installed
+2023-08-07 11:10:01,670:INFO:             uvicorn: Not installed
+2023-08-07 11:10:01,670:INFO:              m2cgen: Not installed
+2023-08-07 11:10:01,670:INFO:           evidently: Not installed
+2023-08-07 11:10:01,670:INFO:               fugue: Not installed
+2023-08-07 11:10:01,670:INFO:           streamlit: Not installed
+2023-08-07 11:10:01,670:INFO:             prophet: Not installed
+2023-08-07 11:10:01,670:INFO:None
+2023-08-07 11:10:01,670:INFO:Set up data.
+2023-08-07 11:10:01,678:INFO:Set up train/test split.
+2023-08-07 11:10:01,685:INFO:Set up index.
+2023-08-07 11:10:01,686:INFO:Set up folding strategy.
+2023-08-07 11:10:01,686:INFO:Assigning column types.
+2023-08-07 11:10:01,692:INFO:Engine successfully changes for model 'lr' to 'sklearn'.
+2023-08-07 11:10:01,777:INFO:Engine for model 'knn' has not been set explicitly, hence returning None.
+2023-08-07 11:10:01,780:INFO:Engine for model 'rbfsvm' has not been set explicitly, hence returning None.
+2023-08-07 11:10:01,838:WARNING:
+'xgboost' is a soft dependency and not included in the pycaret installation. Please run: `pip install xgboost` to install.
+Alternately, you can install this by running `pip install pycaret[models]`
+2023-08-07 11:10:01,854:WARNING:
+'catboost' is a soft dependency and not included in the pycaret installation. Please run: `pip install catboost` to install.
+Alternately, you can install this by running `pip install pycaret[models]`
+2023-08-07 11:10:01,920:INFO:Engine for model 'knn' has not been set explicitly, hence returning None.
+2023-08-07 11:10:01,921:INFO:Engine for model 'rbfsvm' has not been set explicitly, hence returning None.
+2023-08-07 11:10:01,956:WARNING:
+'xgboost' is a soft dependency and not included in the pycaret installation. Please run: `pip install xgboost` to install.
+Alternately, you can install this by running `pip install pycaret[models]`
+2023-08-07 11:10:01,956:WARNING:
+'catboost' is a soft dependency and not included in the pycaret installation. Please run: `pip install catboost` to install.
+Alternately, you can install this by running `pip install pycaret[models]`
+2023-08-07 11:10:01,956:INFO:Engine successfully changes for model 'knn' to 'sklearn'.
+2023-08-07 11:10:02,020:INFO:Engine for model 'rbfsvm' has not been set explicitly, hence returning None.
+2023-08-07 11:10:02,057:WARNING:
+'xgboost' is a soft dependency and not included in the pycaret installation. Please run: `pip install xgboost` to install.
+Alternately, you can install this by running `pip install pycaret[models]`
+2023-08-07 11:10:02,058:WARNING:
+'catboost' is a soft dependency and not included in the pycaret installation. Please run: `pip install catboost` to install.
+Alternately, you can install this by running `pip install pycaret[models]`
+2023-08-07 11:10:02,116:INFO:Engine for model 'rbfsvm' has not been set explicitly, hence returning None.
+2023-08-07 11:10:02,150:WARNING:
+'xgboost' is a soft dependency and not included in the pycaret installation. Please run: `pip install xgboost` to install.
+Alternately, you can install this by running `pip install pycaret[models]`
+2023-08-07 11:10:02,151:WARNING:
+'catboost' is a soft dependency and not included in the pycaret installation. Please run: `pip install catboost` to install.
+Alternately, you can install this by running `pip install pycaret[models]`
+2023-08-07 11:10:02,151:INFO:Engine successfully changes for model 'rbfsvm' to 'sklearn'.
+2023-08-07 11:10:02,240:WARNING:
+'xgboost' is a soft dependency and not included in the pycaret installation. Please run: `pip install xgboost` to install.
+Alternately, you can install this by running `pip install pycaret[models]`
+2023-08-07 11:10:02,241:WARNING:
+'catboost' is a soft dependency and not included in the pycaret installation. Please run: `pip install catboost` to install.
+Alternately, you can install this by running `pip install pycaret[models]`
+2023-08-07 11:10:02,332:WARNING:
+'xgboost' is a soft dependency and not included in the pycaret installation. Please run: `pip install xgboost` to install.
+Alternately, you can install this by running `pip install pycaret[models]`
+2023-08-07 11:10:02,333:WARNING:
+'catboost' is a soft dependency and not included in the pycaret installation. Please run: `pip install catboost` to install.
+Alternately, you can install this by running `pip install pycaret[models]`
+2023-08-07 11:10:02,334:INFO:Preparing preprocessing pipeline...
+2023-08-07 11:10:02,335:INFO:Set up simple imputation.
+2023-08-07 11:10:02,335:INFO:Set up feature normalization.
+2023-08-07 11:10:02,360:INFO:Finished creating preprocessing pipeline.
+2023-08-07 11:10:02,365:INFO:Pipeline: Pipeline(memory=FastMemory(location=/tmp/joblib),
+         steps=[('numerical_imputer',
+                 TransformerWrapper(exclude=None,
+                                    include=['T3', 'TT4', 'T4U', 'FTI'],
+                                    transformer=SimpleImputer(add_indicator=False,
+                                                              copy=True,
+                                                              fill_value=None,
+                                                              keep_empty_features=False,
+                                                              missing_values=nan,
+                                                              strategy='mean',
+                                                              verbose='deprecated'))),
+                ('categorical_imputer',
+                 TransformerWrapper(exclude=None, include=[],
+                                    transformer=SimpleImputer(add_indicator=False,
+                                                              copy=True,
+                                                              fill_value=None,
+                                                              keep_empty_features=False,
+                                                              missing_values=nan,
+                                                              strategy='most_frequent',
+                                                              verbose='deprecated'))),
+                ('normalize',
+                 TransformerWrapper(exclude=None, include=None,
+                                    transformer=StandardScaler(copy=True,
+                                                               with_mean=True,
+                                                               with_std=True)))],
+         verbose=False)
+2023-08-07 11:10:02,365:INFO:Creating final display dataframe.
+2023-08-07 11:10:02,449:INFO:Setup _display_container:                     Description             Value
+0                    Session id              6955
+1                        Target    classification
+2                   Target type            Binary
+3           Original data shape         (5740, 5)
+4        Transformed data shape         (5740, 5)
+5   Transformed train set shape         (4592, 5)
+6    Transformed test set shape         (1148, 5)
+7              Numeric features                 4
+8                    Preprocess              True
+9               Imputation type            simple
+10           Numeric imputation              mean
+11       Categorical imputation              mode
+12                    Normalize              True
+13             Normalize method            zscore
+14               Fold Generator   StratifiedKFold
+15                  Fold Number                10
+16                     CPU Jobs                -1
+17                      Use GPU             False
+18               Log Experiment             False
+19              Experiment Name  clf-default-name
+20                          USI              a4b7
+2023-08-07 11:10:02,548:WARNING:
+'xgboost' is a soft dependency and not included in the pycaret installation. Please run: `pip install xgboost` to install.
+Alternately, you can install this by running `pip install pycaret[models]`
+2023-08-07 11:10:02,549:WARNING:
+'catboost' is a soft dependency and not included in the pycaret installation. Please run: `pip install catboost` to install.
+Alternately, you can install this by running `pip install pycaret[models]`
+2023-08-07 11:10:02,641:WARNING:
+'xgboost' is a soft dependency and not included in the pycaret installation. Please run: `pip install xgboost` to install.
+Alternately, you can install this by running `pip install pycaret[models]`
+2023-08-07 11:10:02,641:WARNING:
+'catboost' is a soft dependency and not included in the pycaret installation. Please run: `pip install catboost` to install.
+Alternately, you can install this by running `pip install pycaret[models]`
+2023-08-07 11:10:02,642:INFO:setup() successfully completed in 1.01s...............
+2023-08-07 11:10:02,652:INFO:Initializing compare_models()
+2023-08-07 11:10:02,652:INFO:compare_models(self=<pycaret.classification.oop.ClassificationExperiment object at 0x7feaad25bf70>, include=None, fold=None, round=4, cross_validation=True, sort=Accuracy, n_select=1, budget_time=None, turbo=True, errors=ignore, fit_kwargs=None, groups=None, experiment_custom_tags=None, probability_threshold=None, verbose=True, parallel=None, caller_params={'self': <pycaret.classification.oop.ClassificationExperiment object at 0x7feaad25bf70>, 'include': None, 'exclude': None, 'fold': None, 'round': 4, 'cross_validation': True, 'sort': 'Accuracy', 'n_select': 1, 'budget_time': None, 'turbo': True, 'errors': 'ignore', 'fit_kwargs': None, 'groups': None, 'experiment_custom_tags': None, 'probability_threshold': None, 'engine': None, 'verbose': True, 'parallel': None, '__class__': <class 'pycaret.classification.oop.ClassificationExperiment'>}, exclude=None)
+2023-08-07 11:10:02,652:INFO:Checking exceptions
+2023-08-07 11:10:02,657:INFO:Preparing display monitor
+2023-08-07 11:10:02,700:INFO:Initializing Logistic Regression
+2023-08-07 11:10:02,701:INFO:Total runtime is 6.504853566487631e-06 minutes
+2023-08-07 11:10:02,706:INFO:SubProcess create_model() called ==================================
+2023-08-07 11:10:02,706:INFO:Initializing create_model()
+2023-08-07 11:10:02,706:INFO:create_model(self=<pycaret.classification.oop.ClassificationExperiment object at 0x7feaad25bf70>, estimator=lr, fold=StratifiedKFold(n_splits=10, random_state=None, shuffle=False), round=4, cross_validation=True, predict=True, fit_kwargs={}, groups=None, refit=False, probability_threshold=None, experiment_custom_tags=None, verbose=False, system=False, add_to_model_list=True, metrics=None, display=<pycaret.internal.display.display.CommonDisplay object at 0x7feaac7f85b0>, model_only=True, return_train_score=False, kwargs={})
+2023-08-07 11:10:02,706:INFO:Checking exceptions
+2023-08-07 11:10:02,706:INFO:Importing libraries
+2023-08-07 11:10:02,706:INFO:Copying training dataset
+2023-08-07 11:10:02,712:INFO:Defining folds
+2023-08-07 11:10:02,713:INFO:Declaring metric variables
+2023-08-07 11:10:02,717:INFO:Importing untrained model
+2023-08-07 11:10:02,723:INFO:Logistic Regression Imported successfully
+2023-08-07 11:10:02,733:INFO:Starting cross validation
+2023-08-07 11:10:02,734:INFO:Cross validating with StratifiedKFold(n_splits=10, random_state=None, shuffle=False), n_jobs=-1
+2023-08-07 11:10:06,636:INFO:Calculating mean and std
+2023-08-07 11:10:06,638:INFO:Creating metrics dataframe
+2023-08-07 11:10:06,664:INFO:Uploading results into container
+2023-08-07 11:10:06,665:INFO:Uploading model into container now
+2023-08-07 11:10:06,666:INFO:_master_model_container: 1
+2023-08-07 11:10:06,666:INFO:_display_container: 2
+2023-08-07 11:10:06,667:INFO:LogisticRegression(C=1.0, class_weight=None, dual=False, fit_intercept=True,
+                   intercept_scaling=1, l1_ratio=None, max_iter=1000,
+                   multi_class='auto', n_jobs=None, penalty='l2',
+                   random_state=6955, solver='lbfgs', tol=0.0001, verbose=0,
+                   warm_start=False)
+2023-08-07 11:10:06,667:INFO:create_model() successfully completed......................................
+2023-08-07 11:10:06,768:INFO:SubProcess create_model() end ==================================
+2023-08-07 11:10:06,769:INFO:Creating metrics dataframe
+2023-08-07 11:10:06,781:INFO:Initializing K Neighbors Classifier
+2023-08-07 11:10:06,781:INFO:Total runtime is 0.06801342964172363 minutes
+2023-08-07 11:10:06,788:INFO:SubProcess create_model() called ==================================
+2023-08-07 11:10:06,788:INFO:Initializing create_model()
+2023-08-07 11:10:06,789:INFO:create_model(self=<pycaret.classification.oop.ClassificationExperiment object at 0x7feaad25bf70>, estimator=knn, fold=StratifiedKFold(n_splits=10, random_state=None, shuffle=False), round=4, cross_validation=True, predict=True, fit_kwargs={}, groups=None, refit=False, probability_threshold=None, experiment_custom_tags=None, verbose=False, system=False, add_to_model_list=True, metrics=None, display=<pycaret.internal.display.display.CommonDisplay object at 0x7feaac7f85b0>, model_only=True, return_train_score=False, kwargs={})
+2023-08-07 11:10:06,789:INFO:Checking exceptions
+2023-08-07 11:10:06,789:INFO:Importing libraries
+2023-08-07 11:10:06,789:INFO:Copying training dataset
+2023-08-07 11:10:06,798:INFO:Defining folds
+2023-08-07 11:10:06,798:INFO:Declaring metric variables
+2023-08-07 11:10:06,805:INFO:Importing untrained model
+2023-08-07 11:10:06,812:INFO:K Neighbors Classifier Imported successfully
+2023-08-07 11:10:06,825:INFO:Starting cross validation
+2023-08-07 11:10:06,827:INFO:Cross validating with StratifiedKFold(n_splits=10, random_state=None, shuffle=False), n_jobs=-1
+2023-08-07 11:10:07,249:INFO:Calculating mean and std
+2023-08-07 11:10:07,252:INFO:Creating metrics dataframe
+2023-08-07 11:10:07,276:INFO:Uploading results into container
+2023-08-07 11:10:07,277:INFO:Uploading model into container now
+2023-08-07 11:10:07,278:INFO:_master_model_container: 2
+2023-08-07 11:10:07,278:INFO:_display_container: 2
+2023-08-07 11:10:07,279:INFO:KNeighborsClassifier(algorithm='auto', leaf_size=30, metric='minkowski',
+                     metric_params=None, n_jobs=-1, n_neighbors=5, p=2,
+                     weights='uniform')
+2023-08-07 11:10:07,279:INFO:create_model() successfully completed......................................
+2023-08-07 11:10:07,366:INFO:SubProcess create_model() end ==================================
+2023-08-07 11:10:07,366:INFO:Creating metrics dataframe
+2023-08-07 11:10:07,378:INFO:Initializing Naive Bayes
+2023-08-07 11:10:07,378:INFO:Total runtime is 0.07796507279078166 minutes
+2023-08-07 11:10:07,382:INFO:SubProcess create_model() called ==================================
+2023-08-07 11:10:07,383:INFO:Initializing create_model()
+2023-08-07 11:10:07,383:INFO:create_model(self=<pycaret.classification.oop.ClassificationExperiment object at 0x7feaad25bf70>, estimator=nb, fold=StratifiedKFold(n_splits=10, random_state=None, shuffle=False), round=4, cross_validation=True, predict=True, fit_kwargs={}, groups=None, refit=False, probability_threshold=None, experiment_custom_tags=None, verbose=False, system=False, add_to_model_list=True, metrics=None, display=<pycaret.internal.display.display.CommonDisplay object at 0x7feaac7f85b0>, model_only=True, return_train_score=False, kwargs={})
+2023-08-07 11:10:07,383:INFO:Checking exceptions
+2023-08-07 11:10:07,383:INFO:Importing libraries
+2023-08-07 11:10:07,383:INFO:Copying training dataset
+2023-08-07 11:10:07,389:INFO:Defining folds
+2023-08-07 11:10:07,389:INFO:Declaring metric variables
+2023-08-07 11:10:07,394:INFO:Importing untrained model
+2023-08-07 11:10:07,401:INFO:Naive Bayes Imported successfully
+2023-08-07 11:10:07,411:INFO:Starting cross validation
+2023-08-07 11:10:07,413:INFO:Cross validating with StratifiedKFold(n_splits=10, random_state=None, shuffle=False), n_jobs=-1
+2023-08-07 11:10:07,715:INFO:Calculating mean and std
+2023-08-07 11:10:07,718:INFO:Creating metrics dataframe
+2023-08-07 11:10:07,740:INFO:Uploading results into container
+2023-08-07 11:10:07,741:INFO:Uploading model into container now
+2023-08-07 11:10:07,742:INFO:_master_model_container: 3
+2023-08-07 11:10:07,742:INFO:_display_container: 2
+2023-08-07 11:10:07,742:INFO:GaussianNB(priors=None, var_smoothing=1e-09)
+2023-08-07 11:10:07,742:INFO:create_model() successfully completed......................................
+2023-08-07 11:10:07,829:INFO:SubProcess create_model() end ==================================
+2023-08-07 11:10:07,829:INFO:Creating metrics dataframe
+2023-08-07 11:10:07,841:INFO:Initializing Decision Tree Classifier
+2023-08-07 11:10:07,841:INFO:Total runtime is 0.0856775681177775 minutes
+2023-08-07 11:10:07,846:INFO:SubProcess create_model() called ==================================
+2023-08-07 11:10:07,847:INFO:Initializing create_model()
+2023-08-07 11:10:07,847:INFO:create_model(self=<pycaret.classification.oop.ClassificationExperiment object at 0x7feaad25bf70>, estimator=dt, fold=StratifiedKFold(n_splits=10, random_state=None, shuffle=False), round=4, cross_validation=True, predict=True, fit_kwargs={}, groups=None, refit=False, probability_threshold=None, experiment_custom_tags=None, verbose=False, system=False, add_to_model_list=True, metrics=None, display=<pycaret.internal.display.display.CommonDisplay object at 0x7feaac7f85b0>, model_only=True, return_train_score=False, kwargs={})
+2023-08-07 11:10:07,847:INFO:Checking exceptions
+2023-08-07 11:10:07,847:INFO:Importing libraries
+2023-08-07 11:10:07,847:INFO:Copying training dataset
+2023-08-07 11:10:07,856:INFO:Defining folds
+2023-08-07 11:10:07,856:INFO:Declaring metric variables
+2023-08-07 11:10:07,862:INFO:Importing untrained model
+2023-08-07 11:10:07,867:INFO:Decision Tree Classifier Imported successfully
+2023-08-07 11:10:07,881:INFO:Starting cross validation
+2023-08-07 11:10:07,882:INFO:Cross validating with StratifiedKFold(n_splits=10, random_state=None, shuffle=False), n_jobs=-1
+2023-08-07 11:10:08,210:INFO:Calculating mean and std
+2023-08-07 11:10:08,213:INFO:Creating metrics dataframe
+2023-08-07 11:10:08,237:INFO:Uploading results into container
+2023-08-07 11:10:08,238:INFO:Uploading model into container now
+2023-08-07 11:10:08,238:INFO:_master_model_container: 4
+2023-08-07 11:10:08,238:INFO:_display_container: 2
+2023-08-07 11:10:08,239:INFO:DecisionTreeClassifier(ccp_alpha=0.0, class_weight=None, criterion='gini',
+                       max_depth=None, max_features=None, max_leaf_nodes=None,
+                       min_impurity_decrease=0.0, min_samples_leaf=1,
+                       min_samples_split=2, min_weight_fraction_leaf=0.0,
+                       random_state=6955, splitter='best')
+2023-08-07 11:10:08,239:INFO:create_model() successfully completed......................................
+2023-08-07 11:10:08,328:INFO:SubProcess create_model() end ==================================
+2023-08-07 11:10:08,328:INFO:Creating metrics dataframe
+2023-08-07 11:10:08,340:INFO:Initializing SVM - Linear Kernel
+2023-08-07 11:10:08,341:INFO:Total runtime is 0.09400431315104167 minutes
+2023-08-07 11:10:08,346:INFO:SubProcess create_model() called ==================================
+2023-08-07 11:10:08,347:INFO:Initializing create_model()
+2023-08-07 11:10:08,347:INFO:create_model(self=<pycaret.classification.oop.ClassificationExperiment object at 0x7feaad25bf70>, estimator=svm, fold=StratifiedKFold(n_splits=10, random_state=None, shuffle=False), round=4, cross_validation=True, predict=True, fit_kwargs={}, groups=None, refit=False, probability_threshold=None, experiment_custom_tags=None, verbose=False, system=False, add_to_model_list=True, metrics=None, display=<pycaret.internal.display.display.CommonDisplay object at 0x7feaac7f85b0>, model_only=True, return_train_score=False, kwargs={})
+2023-08-07 11:10:08,347:INFO:Checking exceptions
+2023-08-07 11:10:08,347:INFO:Importing libraries
+2023-08-07 11:10:08,347:INFO:Copying training dataset
+2023-08-07 11:10:08,355:INFO:Defining folds
+2023-08-07 11:10:08,355:INFO:Declaring metric variables
+2023-08-07 11:10:08,361:INFO:Importing untrained model
+2023-08-07 11:10:08,369:INFO:SVM - Linear Kernel Imported successfully
+2023-08-07 11:10:08,380:INFO:Starting cross validation
+2023-08-07 11:10:08,382:INFO:Cross validating with StratifiedKFold(n_splits=10, random_state=None, shuffle=False), n_jobs=-1
+2023-08-07 11:10:08,511:WARNING:/home/vinicius/UFERSA/cilab/euthyroid_sick_syndrome/cilab/lib/python3.10/site-packages/pycaret/internal/metrics.py:138: FitFailedWarning: Metric 'make_scorer(roc_auc_score, needs_proba=True, error_score=0.0, average=weighted, multi_class=ovr)' failed and error score 0.0 has been returned instead. If this is a custom metric, this usually means that the error is in the metric code. Full exception below:
+Traceback (most recent call last):
+  File "/home/vinicius/UFERSA/cilab/euthyroid_sick_syndrome/cilab/lib/python3.10/site-packages/sklearn/metrics/_scorer.py", line 76, in _cached_call
+    return cache[method]
+KeyError: 'predict_proba'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/vinicius/UFERSA/cilab/euthyroid_sick_syndrome/cilab/lib/python3.10/site-packages/pycaret/internal/metrics.py", line 130, in _score
+    return super()._score(
+  File "/home/vinicius/UFERSA/cilab/euthyroid_sick_syndrome/cilab/lib/python3.10/site-packages/sklearn/metrics/_scorer.py", line 316, in _score
+    y_pred = method_caller(clf, "predict_proba", X)
+  File "/home/vinicius/UFERSA/cilab/euthyroid_sick_syndrome/cilab/lib/python3.10/site-packages/sklearn/metrics/_scorer.py", line 78, in _cached_call
+    result = getattr(estimator, method)(*args, **kwargs)
+  File "/home/vinicius/UFERSA/cilab/euthyroid_sick_syndrome/cilab/lib/python3.10/site-packages/pycaret/internal/pipeline.py", line 121, in __getattr__
+    return getattr(self._final_estimator, name)
+  File "/home/vinicius/UFERSA/cilab/euthyroid_sick_syndrome/cilab/lib/python3.10/site-packages/sklearn/utils/_available_if.py", line 32, in __get__
+    if not self.check(obj):
+  File "/home/vinicius/UFERSA/cilab/euthyroid_sick_syndrome/cilab/lib/python3.10/site-packages/sklearn/linear_model/_stochastic_gradient.py", line 1236, in _check_proba
+    raise AttributeError(
+AttributeError: probability estimates are not available for loss='hinge'
+
+  warnings.warn(
+
+2023-08-07 11:10:08,514:WARNING:/home/vinicius/UFERSA/cilab/euthyroid_sick_syndrome/cilab/lib/python3.10/site-packages/pycaret/internal/metrics.py:138: FitFailedWarning: Metric 'make_scorer(roc_auc_score, needs_proba=True, error_score=0.0, average=weighted, multi_class=ovr)' failed and error score 0.0 has been returned instead. If this is a custom metric, this usually means that the error is in the metric code. Full exception below:
+Traceback (most recent call last):
+  File "/home/vinicius/UFERSA/cilab/euthyroid_sick_syndrome/cilab/lib/python3.10/site-packages/sklearn/metrics/_scorer.py", line 76, in _cached_call
+    return cache[method]
+KeyError: 'predict_proba'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/vinicius/UFERSA/cilab/euthyroid_sick_syndrome/cilab/lib/python3.10/site-packages/pycaret/internal/metrics.py", line 130, in _score
+    return super()._score(
+  File "/home/vinicius/UFERSA/cilab/euthyroid_sick_syndrome/cilab/lib/python3.10/site-packages/sklearn/metrics/_scorer.py", line 316, in _score
+    y_pred = method_caller(clf, "predict_proba", X)
+  File "/home/vinicius/UFERSA/cilab/euthyroid_sick_syndrome/cilab/lib/python3.10/site-packages/sklearn/metrics/_scorer.py", line 78, in _cached_call
+    result = getattr(estimator, method)(*args, **kwargs)
+  File "/home/vinicius/UFERSA/cilab/euthyroid_sick_syndrome/cilab/lib/python3.10/site-packages/pycaret/internal/pipeline.py", line 121, in __getattr__
+    return getattr(self._final_estimator, name)
+  File "/home/vinicius/UFERSA/cilab/euthyroid_sick_syndrome/cilab/lib/python3.10/site-packages/sklearn/utils/_available_if.py", line 32, in __get__
+    if not self.check(obj):
+  File "/home/vinicius/UFERSA/cilab/euthyroid_sick_syndrome/cilab/lib/python3.10/site-packages/sklearn/linear_model/_stochastic_gradient.py", line 1236, in _check_proba
+    raise AttributeError(
+AttributeError: probability estimates are not available for loss='hinge'
+
+  warnings.warn(
+
+2023-08-07 11:10:08,521:WARNING:/home/vinicius/UFERSA/cilab/euthyroid_sick_syndrome/cilab/lib/python3.10/site-packages/pycaret/internal/metrics.py:138: FitFailedWarning: Metric 'make_scorer(roc_auc_score, needs_proba=True, error_score=0.0, average=weighted, multi_class=ovr)' failed and error score 0.0 has been returned instead. If this is a custom metric, this usually means that the error is in the metric code. Full exception below:
+Traceback (most recent call last):
+  File "/home/vinicius/UFERSA/cilab/euthyroid_sick_syndrome/cilab/lib/python3.10/site-packages/sklearn/metrics/_scorer.py", line 76, in _cached_call
+    return cache[method]
+KeyError: 'predict_proba'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/vinicius/UFERSA/cilab/euthyroid_sick_syndrome/cilab/lib/python3.10/site-packages/pycaret/internal/metrics.py", line 130, in _score
+    return super()._score(
+  File "/home/vinicius/UFERSA/cilab/euthyroid_sick_syndrome/cilab/lib/python3.10/site-packages/sklearn/metrics/_scorer.py", line 316, in _score
+    y_pred = method_caller(clf, "predict_proba", X)
+  File "/home/vinicius/UFERSA/cilab/euthyroid_sick_syndrome/cilab/lib/python3.10/site-packages/sklearn/metrics/_scorer.py", line 78, in _cached_call
+    result = getattr(estimator, method)(*args, **kwargs)
+  File "/home/vinicius/UFERSA/cilab/euthyroid_sick_syndrome/cilab/lib/python3.10/site-packages/pycaret/internal/pipeline.py", line 121, in __getattr__
+    return getattr(self._final_estimator, name)
+  File "/home/vinicius/UFERSA/cilab/euthyroid_sick_syndrome/cilab/lib/python3.10/site-packages/sklearn/utils/_available_if.py", line 32, in __get__
+    if not self.check(obj):
+  File "/home/vinicius/UFERSA/cilab/euthyroid_sick_syndrome/cilab/lib/python3.10/site-packages/sklearn/linear_model/_stochastic_gradient.py", line 1236, in _check_proba
+    raise AttributeError(
+AttributeError: probability estimates are not available for loss='hinge'
+
+  warnings.warn(
+
+2023-08-07 11:10:08,532:WARNING:/home/vinicius/UFERSA/cilab/euthyroid_sick_syndrome/cilab/lib/python3.10/site-packages/pycaret/internal/metrics.py:138: FitFailedWarning: Metric 'make_scorer(roc_auc_score, needs_proba=True, error_score=0.0, average=weighted, multi_class=ovr)' failed and error score 0.0 has been returned instead. If this is a custom metric, this usually means that the error is in the metric code. Full exception below:
+Traceback (most recent call last):
+  File "/home/vinicius/UFERSA/cilab/euthyroid_sick_syndrome/cilab/lib/python3.10/site-packages/sklearn/metrics/_scorer.py", line 76, in _cached_call
+    return cache[method]
+KeyError: 'predict_proba'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/vinicius/UFERSA/cilab/euthyroid_sick_syndrome/cilab/lib/python3.10/site-packages/pycaret/internal/metrics.py", line 130, in _score
+    return super()._score(
+  File "/home/vinicius/UFERSA/cilab/euthyroid_sick_syndrome/cilab/lib/python3.10/site-packages/sklearn/metrics/_scorer.py", line 316, in _score
+    y_pred = method_caller(clf, "predict_proba", X)
+  File "/home/vinicius/UFERSA/cilab/euthyroid_sick_syndrome/cilab/lib/python3.10/site-packages/sklearn/metrics/_scorer.py", line 78, in _cached_call
+    result = getattr(estimator, method)(*args, **kwargs)
+  File "/home/vinicius/UFERSA/cilab/euthyroid_sick_syndrome/cilab/lib/python3.10/site-packages/pycaret/internal/pipeline.py", line 121, in __getattr__
+    return getattr(self._final_estimator, name)
+  File "/home/vinicius/UFERSA/cilab/euthyroid_sick_syndrome/cilab/lib/python3.10/site-packages/sklearn/utils/_available_if.py", line 32, in __get__
+    if not self.check(obj):
+  File "/home/vinicius/UFERSA/cilab/euthyroid_sick_syndrome/cilab/lib/python3.10/site-packages/sklearn/linear_model/_stochastic_gradient.py", line 1236, in _check_proba
+    raise AttributeError(
+AttributeError: probability estimates are not available for loss='hinge'
+
+  warnings.warn(
+
+2023-08-07 11:10:08,535:WARNING:/home/vinicius/UFERSA/cilab/euthyroid_sick_syndrome/cilab/lib/python3.10/site-packages/pycaret/internal/metrics.py:138: FitFailedWarning: Metric 'make_scorer(roc_auc_score, needs_proba=True, error_score=0.0, average=weighted, multi_class=ovr)' failed and error score 0.0 has been returned instead. If this is a custom metric, this usually means that the error is in the metric code. Full exception below:
+Traceback (most recent call last):
+  File "/home/vinicius/UFERSA/cilab/euthyroid_sick_syndrome/cilab/lib/python3.10/site-packages/sklearn/metrics/_scorer.py", line 76, in _cached_call
+    return cache[method]
+KeyError: 'predict_proba'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/vinicius/UFERSA/cilab/euthyroid_sick_syndrome/cilab/lib/python3.10/site-packages/pycaret/internal/metrics.py", line 130, in _score
+    return super()._score(
+  File "/home/vinicius/UFERSA/cilab/euthyroid_sick_syndrome/cilab/lib/python3.10/site-packages/sklearn/metrics/_scorer.py", line 316, in _score
+    y_pred = method_caller(clf, "predict_proba", X)
+  File "/home/vinicius/UFERSA/cilab/euthyroid_sick_syndrome/cilab/lib/python3.10/site-packages/sklearn/metrics/_scorer.py", line 78, in _cached_call
+    result = getattr(estimator, method)(*args, **kwargs)
+  File "/home/vinicius/UFERSA/cilab/euthyroid_sick_syndrome/cilab/lib/python3.10/site-packages/pycaret/internal/pipeline.py", line 121, in __getattr__
+    return getattr(self._final_estimator, name)
+  File "/home/vinicius/UFERSA/cilab/euthyroid_sick_syndrome/cilab/lib/python3.10/site-packages/sklearn/utils/_available_if.py", line 32, in __get__
+    if not self.check(obj):
+  File "/home/vinicius/UFERSA/cilab/euthyroid_sick_syndrome/cilab/lib/python3.10/site-packages/sklearn/linear_model/_stochastic_gradient.py", line 1236, in _check_proba
+    raise AttributeError(
+AttributeError: probability estimates are not available for loss='hinge'
+
+  warnings.warn(
+
+2023-08-07 11:10:08,552:WARNING:/home/vinicius/UFERSA/cilab/euthyroid_sick_syndrome/cilab/lib/python3.10/site-packages/pycaret/internal/metrics.py:138: FitFailedWarning: Metric 'make_scorer(roc_auc_score, needs_proba=True, error_score=0.0, average=weighted, multi_class=ovr)' failed and error score 0.0 has been returned instead. If this is a custom metric, this usually means that the error is in the metric code. Full exception below:
+Traceback (most recent call last):
+  File "/home/vinicius/UFERSA/cilab/euthyroid_sick_syndrome/cilab/lib/python3.10/site-packages/sklearn/metrics/_scorer.py", line 76, in _cached_call
+    return cache[method]
+KeyError: 'predict_proba'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/vinicius/UFERSA/cilab/euthyroid_sick_syndrome/cilab/lib/python3.10/site-packages/pycaret/internal/metrics.py", line 130, in _score
+    return super()._score(
+  File "/home/vinicius/UFERSA/cilab/euthyroid_sick_syndrome/cilab/lib/python3.10/site-packages/sklearn/metrics/_scorer.py", line 316, in _score
+    y_pred = method_caller(clf, "predict_proba", X)
+  File "/home/vinicius/UFERSA/cilab/euthyroid_sick_syndrome/cilab/lib/python3.10/site-packages/sklearn/metrics/_scorer.py", line 78, in _cached_call
+    result = getattr(estimator, method)(*args, **kwargs)
+  File "/home/vinicius/UFERSA/cilab/euthyroid_sick_syndrome/cilab/lib/python3.10/site-packages/pycaret/internal/pipeline.py", line 121, in __getattr__
+    return getattr(self._final_estimator, name)
+  File "/home/vinicius/UFERSA/cilab/euthyroid_sick_syndrome/cilab/lib/python3.10/site-packages/sklearn/utils/_available_if.py", line 32, in __get__
+    if not self.check(obj):
+  File "/home/vinicius/UFERSA/cilab/euthyroid_sick_syndrome/cilab/lib/python3.10/site-packages/sklearn/linear_model/_stochastic_gradient.py", line 1236, in _check_proba
+    raise AttributeError(
+AttributeError: probability estimates are not available for loss='hinge'
+
+  warnings.warn(
+
+2023-08-07 11:10:08,578:WARNING:/home/vinicius/UFERSA/cilab/euthyroid_sick_syndrome/cilab/lib/python3.10/site-packages/pycaret/internal/metrics.py:138: FitFailedWarning: Metric 'make_scorer(roc_auc_score, needs_proba=True, error_score=0.0, average=weighted, multi_class=ovr)' failed and error score 0.0 has been returned instead. If this is a custom metric, this usually means that the error is in the metric code. Full exception below:
+Traceback (most recent call last):
+  File "/home/vinicius/UFERSA/cilab/euthyroid_sick_syndrome/cilab/lib/python3.10/site-packages/sklearn/metrics/_scorer.py", line 76, in _cached_call
+    return cache[method]
+KeyError: 'predict_proba'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/vinicius/UFERSA/cilab/euthyroid_sick_syndrome/cilab/lib/python3.10/site-packages/pycaret/internal/metrics.py", line 130, in _score
+    return super()._score(
+  File "/home/vinicius/UFERSA/cilab/euthyroid_sick_syndrome/cilab/lib/python3.10/site-packages/sklearn/metrics/_scorer.py", line 316, in _score
+    y_pred = method_caller(clf, "predict_proba", X)
+  File "/home/vinicius/UFERSA/cilab/euthyroid_sick_syndrome/cilab/lib/python3.10/site-packages/sklearn/metrics/_scorer.py", line 78, in _cached_call
+    result = getattr(estimator, method)(*args, **kwargs)
+  File "/home/vinicius/UFERSA/cilab/euthyroid_sick_syndrome/cilab/lib/python3.10/site-packages/pycaret/internal/pipeline.py", line 121, in __getattr__
+    return getattr(self._final_estimator, name)
+  File "/home/vinicius/UFERSA/cilab/euthyroid_sick_syndrome/cilab/lib/python3.10/site-packages/sklearn/utils/_available_if.py", line 32, in __get__
+    if not self.check(obj):
+  File "/home/vinicius/UFERSA/cilab/euthyroid_sick_syndrome/cilab/lib/python3.10/site-packages/sklearn/linear_model/_stochastic_gradient.py", line 1236, in _check_proba
+    raise AttributeError(
+AttributeError: probability estimates are not available for loss='hinge'
+
+  warnings.warn(
+
+2023-08-07 11:10:08,583:WARNING:/home/vinicius/UFERSA/cilab/euthyroid_sick_syndrome/cilab/lib/python3.10/site-packages/pycaret/internal/metrics.py:138: FitFailedWarning: Metric 'make_scorer(roc_auc_score, needs_proba=True, error_score=0.0, average=weighted, multi_class=ovr)' failed and error score 0.0 has been returned instead. If this is a custom metric, this usually means that the error is in the metric code. Full exception below:
+Traceback (most recent call last):
+  File "/home/vinicius/UFERSA/cilab/euthyroid_sick_syndrome/cilab/lib/python3.10/site-packages/sklearn/metrics/_scorer.py", line 76, in _cached_call
+    return cache[method]
+KeyError: 'predict_proba'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/vinicius/UFERSA/cilab/euthyroid_sick_syndrome/cilab/lib/python3.10/site-packages/pycaret/internal/metrics.py", line 130, in _score
+    return super()._score(
+  File "/home/vinicius/UFERSA/cilab/euthyroid_sick_syndrome/cilab/lib/python3.10/site-packages/sklearn/metrics/_scorer.py", line 316, in _score
+    y_pred = method_caller(clf, "predict_proba", X)
+  File "/home/vinicius/UFERSA/cilab/euthyroid_sick_syndrome/cilab/lib/python3.10/site-packages/sklearn/metrics/_scorer.py", line 78, in _cached_call
+    result = getattr(estimator, method)(*args, **kwargs)
+  File "/home/vinicius/UFERSA/cilab/euthyroid_sick_syndrome/cilab/lib/python3.10/site-packages/pycaret/internal/pipeline.py", line 121, in __getattr__
+    return getattr(self._final_estimator, name)
+  File "/home/vinicius/UFERSA/cilab/euthyroid_sick_syndrome/cilab/lib/python3.10/site-packages/sklearn/utils/_available_if.py", line 32, in __get__
+    if not self.check(obj):
+  File "/home/vinicius/UFERSA/cilab/euthyroid_sick_syndrome/cilab/lib/python3.10/site-packages/sklearn/linear_model/_stochastic_gradient.py", line 1236, in _check_proba
+    raise AttributeError(
+AttributeError: probability estimates are not available for loss='hinge'
+
+  warnings.warn(
+
+2023-08-07 11:10:08,622:WARNING:/home/vinicius/UFERSA/cilab/euthyroid_sick_syndrome/cilab/lib/python3.10/site-packages/pycaret/internal/metrics.py:138: FitFailedWarning: Metric 'make_scorer(roc_auc_score, needs_proba=True, error_score=0.0, average=weighted, multi_class=ovr)' failed and error score 0.0 has been returned instead. If this is a custom metric, this usually means that the error is in the metric code. Full exception below:
+Traceback (most recent call last):
+  File "/home/vinicius/UFERSA/cilab/euthyroid_sick_syndrome/cilab/lib/python3.10/site-packages/sklearn/metrics/_scorer.py", line 76, in _cached_call
+    return cache[method]
+KeyError: 'predict_proba'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/vinicius/UFERSA/cilab/euthyroid_sick_syndrome/cilab/lib/python3.10/site-packages/pycaret/internal/metrics.py", line 130, in _score
+    return super()._score(
+  File "/home/vinicius/UFERSA/cilab/euthyroid_sick_syndrome/cilab/lib/python3.10/site-packages/sklearn/metrics/_scorer.py", line 316, in _score
+    y_pred = method_caller(clf, "predict_proba", X)
+  File "/home/vinicius/UFERSA/cilab/euthyroid_sick_syndrome/cilab/lib/python3.10/site-packages/sklearn/metrics/_scorer.py", line 78, in _cached_call
+    result = getattr(estimator, method)(*args, **kwargs)
+  File "/home/vinicius/UFERSA/cilab/euthyroid_sick_syndrome/cilab/lib/python3.10/site-packages/pycaret/internal/pipeline.py", line 121, in __getattr__
+    return getattr(self._final_estimator, name)
+  File "/home/vinicius/UFERSA/cilab/euthyroid_sick_syndrome/cilab/lib/python3.10/site-packages/sklearn/utils/_available_if.py", line 32, in __get__
+    if not self.check(obj):
+  File "/home/vinicius/UFERSA/cilab/euthyroid_sick_syndrome/cilab/lib/python3.10/site-packages/sklearn/linear_model/_stochastic_gradient.py", line 1236, in _check_proba
+    raise AttributeError(
+AttributeError: probability estimates are not available for loss='hinge'
+
+  warnings.warn(
+
+2023-08-07 11:10:08,627:WARNING:/home/vinicius/UFERSA/cilab/euthyroid_sick_syndrome/cilab/lib/python3.10/site-packages/pycaret/internal/metrics.py:138: FitFailedWarning: Metric 'make_scorer(roc_auc_score, needs_proba=True, error_score=0.0, average=weighted, multi_class=ovr)' failed and error score 0.0 has been returned instead. If this is a custom metric, this usually means that the error is in the metric code. Full exception below:
+Traceback (most recent call last):
+  File "/home/vinicius/UFERSA/cilab/euthyroid_sick_syndrome/cilab/lib/python3.10/site-packages/sklearn/metrics/_scorer.py", line 76, in _cached_call
+    return cache[method]
+KeyError: 'predict_proba'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/vinicius/UFERSA/cilab/euthyroid_sick_syndrome/cilab/lib/python3.10/site-packages/pycaret/internal/metrics.py", line 130, in _score
+    return super()._score(
+  File "/home/vinicius/UFERSA/cilab/euthyroid_sick_syndrome/cilab/lib/python3.10/site-packages/sklearn/metrics/_scorer.py", line 316, in _score
+    y_pred = method_caller(clf, "predict_proba", X)
+  File "/home/vinicius/UFERSA/cilab/euthyroid_sick_syndrome/cilab/lib/python3.10/site-packages/sklearn/metrics/_scorer.py", line 78, in _cached_call
+    result = getattr(estimator, method)(*args, **kwargs)
+  File "/home/vinicius/UFERSA/cilab/euthyroid_sick_syndrome/cilab/lib/python3.10/site-packages/pycaret/internal/pipeline.py", line 121, in __getattr__
+    return getattr(self._final_estimator, name)
+  File "/home/vinicius/UFERSA/cilab/euthyroid_sick_syndrome/cilab/lib/python3.10/site-packages/sklearn/utils/_available_if.py", line 32, in __get__
+    if not self.check(obj):
+  File "/home/vinicius/UFERSA/cilab/euthyroid_sick_syndrome/cilab/lib/python3.10/site-packages/sklearn/linear_model/_stochastic_gradient.py", line 1236, in _check_proba
+    raise AttributeError(
+AttributeError: probability estimates are not available for loss='hinge'
+
+  warnings.warn(
+
+2023-08-07 11:10:08,638:INFO:Calculating mean and std
+2023-08-07 11:10:08,641:INFO:Creating metrics dataframe
+2023-08-07 11:10:08,663:INFO:Uploading results into container
+2023-08-07 11:10:08,664:INFO:Uploading model into container now
+2023-08-07 11:10:08,664:INFO:_master_model_container: 5
+2023-08-07 11:10:08,664:INFO:_display_container: 2
+2023-08-07 11:10:08,665:INFO:SGDClassifier(alpha=0.0001, average=False, class_weight=None,
+              early_stopping=False, epsilon=0.1, eta0=0.001, fit_intercept=True,
+              l1_ratio=0.15, learning_rate='optimal', loss='hinge',
+              max_iter=1000, n_iter_no_change=5, n_jobs=-1, penalty='l2',
+              power_t=0.5, random_state=6955, shuffle=True, tol=0.001,
+              validation_fraction=0.1, verbose=0, warm_start=False)
+2023-08-07 11:10:08,665:INFO:create_model() successfully completed......................................
+2023-08-07 11:10:08,752:INFO:SubProcess create_model() end ==================================
+2023-08-07 11:10:08,752:INFO:Creating metrics dataframe
+2023-08-07 11:10:08,763:INFO:Initializing Ridge Classifier
+2023-08-07 11:10:08,764:INFO:Total runtime is 0.10105388959248861 minutes
+2023-08-07 11:10:08,767:INFO:SubProcess create_model() called ==================================
+2023-08-07 11:10:08,768:INFO:Initializing create_model()
+2023-08-07 11:10:08,768:INFO:create_model(self=<pycaret.classification.oop.ClassificationExperiment object at 0x7feaad25bf70>, estimator=ridge, fold=StratifiedKFold(n_splits=10, random_state=None, shuffle=False), round=4, cross_validation=True, predict=True, fit_kwargs={}, groups=None, refit=False, probability_threshold=None, experiment_custom_tags=None, verbose=False, system=False, add_to_model_list=True, metrics=None, display=<pycaret.internal.display.display.CommonDisplay object at 0x7feaac7f85b0>, model_only=True, return_train_score=False, kwargs={})
+2023-08-07 11:10:08,768:INFO:Checking exceptions
+2023-08-07 11:10:08,768:INFO:Importing libraries
+2023-08-07 11:10:08,768:INFO:Copying training dataset
+2023-08-07 11:10:08,774:INFO:Defining folds
+2023-08-07 11:10:08,774:INFO:Declaring metric variables
+2023-08-07 11:10:08,781:INFO:Importing untrained model
+2023-08-07 11:10:08,787:INFO:Ridge Classifier Imported successfully
+2023-08-07 11:10:08,799:INFO:Starting cross validation
+2023-08-07 11:10:08,801:INFO:Cross validating with StratifiedKFold(n_splits=10, random_state=None, shuffle=False), n_jobs=-1
+2023-08-07 11:10:08,916:WARNING:/home/vinicius/UFERSA/cilab/euthyroid_sick_syndrome/cilab/lib/python3.10/site-packages/pycaret/internal/metrics.py:138: FitFailedWarning: Metric 'make_scorer(roc_auc_score, needs_proba=True, error_score=0.0, average=weighted, multi_class=ovr)' failed and error score 0.0 has been returned instead. If this is a custom metric, this usually means that the error is in the metric code. Full exception below:
+Traceback (most recent call last):
+  File "/home/vinicius/UFERSA/cilab/euthyroid_sick_syndrome/cilab/lib/python3.10/site-packages/sklearn/metrics/_scorer.py", line 76, in _cached_call
+    return cache[method]
+KeyError: 'predict_proba'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/vinicius/UFERSA/cilab/euthyroid_sick_syndrome/cilab/lib/python3.10/site-packages/pycaret/internal/metrics.py", line 130, in _score
+    return super()._score(
+  File "/home/vinicius/UFERSA/cilab/euthyroid_sick_syndrome/cilab/lib/python3.10/site-packages/sklearn/metrics/_scorer.py", line 316, in _score
+    y_pred = method_caller(clf, "predict_proba", X)
+  File "/home/vinicius/UFERSA/cilab/euthyroid_sick_syndrome/cilab/lib/python3.10/site-packages/sklearn/metrics/_scorer.py", line 78, in _cached_call
+    result = getattr(estimator, method)(*args, **kwargs)
+  File "/home/vinicius/UFERSA/cilab/euthyroid_sick_syndrome/cilab/lib/python3.10/site-packages/pycaret/internal/pipeline.py", line 121, in __getattr__
+    return getattr(self._final_estimator, name)
+AttributeError: 'RidgeClassifier' object has no attribute 'predict_proba'
+
+  warnings.warn(
+
+2023-08-07 11:10:08,918:WARNING:/home/vinicius/UFERSA/cilab/euthyroid_sick_syndrome/cilab/lib/python3.10/site-packages/pycaret/internal/metrics.py:138: FitFailedWarning: Metric 'make_scorer(roc_auc_score, needs_proba=True, error_score=0.0, average=weighted, multi_class=ovr)' failed and error score 0.0 has been returned instead. If this is a custom metric, this usually means that the error is in the metric code. Full exception below:
+Traceback (most recent call last):
+  File "/home/vinicius/UFERSA/cilab/euthyroid_sick_syndrome/cilab/lib/python3.10/site-packages/sklearn/metrics/_scorer.py", line 76, in _cached_call
+    return cache[method]
+KeyError: 'predict_proba'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/vinicius/UFERSA/cilab/euthyroid_sick_syndrome/cilab/lib/python3.10/site-packages/pycaret/internal/metrics.py", line 130, in _score
+    return super()._score(
+  File "/home/vinicius/UFERSA/cilab/euthyroid_sick_syndrome/cilab/lib/python3.10/site-packages/sklearn/metrics/_scorer.py", line 316, in _score
+    y_pred = method_caller(clf, "predict_proba", X)
+  File "/home/vinicius/UFERSA/cilab/euthyroid_sick_syndrome/cilab/lib/python3.10/site-packages/sklearn/metrics/_scorer.py", line 78, in _cached_call
+    result = getattr(estimator, method)(*args, **kwargs)
+  File "/home/vinicius/UFERSA/cilab/euthyroid_sick_syndrome/cilab/lib/python3.10/site-packages/pycaret/internal/pipeline.py", line 121, in __getattr__
+    return getattr(self._final_estimator, name)
+AttributeError: 'RidgeClassifier' object has no attribute 'predict_proba'
+
+  warnings.warn(
+
+2023-08-07 11:10:08,938:WARNING:/home/vinicius/UFERSA/cilab/euthyroid_sick_syndrome/cilab/lib/python3.10/site-packages/pycaret/internal/metrics.py:138: FitFailedWarning: Metric 'make_scorer(roc_auc_score, needs_proba=True, error_score=0.0, average=weighted, multi_class=ovr)' failed and error score 0.0 has been returned instead. If this is a custom metric, this usually means that the error is in the metric code. Full exception below:
+Traceback (most recent call last):
+  File "/home/vinicius/UFERSA/cilab/euthyroid_sick_syndrome/cilab/lib/python3.10/site-packages/sklearn/metrics/_scorer.py", line 76, in _cached_call
+    return cache[method]
+KeyError: 'predict_proba'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/vinicius/UFERSA/cilab/euthyroid_sick_syndrome/cilab/lib/python3.10/site-packages/pycaret/internal/metrics.py", line 130, in _score
+    return super()._score(
+  File "/home/vinicius/UFERSA/cilab/euthyroid_sick_syndrome/cilab/lib/python3.10/site-packages/sklearn/metrics/_scorer.py", line 316, in _score
+    y_pred = method_caller(clf, "predict_proba", X)
+  File "/home/vinicius/UFERSA/cilab/euthyroid_sick_syndrome/cilab/lib/python3.10/site-packages/sklearn/metrics/_scorer.py", line 78, in _cached_call
+    result = getattr(estimator, method)(*args, **kwargs)
+  File "/home/vinicius/UFERSA/cilab/euthyroid_sick_syndrome/cilab/lib/python3.10/site-packages/pycaret/internal/pipeline.py", line 121, in __getattr__
+    return getattr(self._final_estimator, name)
+AttributeError: 'RidgeClassifier' object has no attribute 'predict_proba'
+
+  warnings.warn(
+
+2023-08-07 11:10:08,946:WARNING:/home/vinicius/UFERSA/cilab/euthyroid_sick_syndrome/cilab/lib/python3.10/site-packages/pycaret/internal/metrics.py:138: FitFailedWarning: Metric 'make_scorer(roc_auc_score, needs_proba=True, error_score=0.0, average=weighted, multi_class=ovr)' failed and error score 0.0 has been returned instead. If this is a custom metric, this usually means that the error is in the metric code. Full exception below:
+Traceback (most recent call last):
+  File "/home/vinicius/UFERSA/cilab/euthyroid_sick_syndrome/cilab/lib/python3.10/site-packages/sklearn/metrics/_scorer.py", line 76, in _cached_call
+    return cache[method]
+KeyError: 'predict_proba'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/vinicius/UFERSA/cilab/euthyroid_sick_syndrome/cilab/lib/python3.10/site-packages/pycaret/internal/metrics.py", line 130, in _score
+    return super()._score(
+  File "/home/vinicius/UFERSA/cilab/euthyroid_sick_syndrome/cilab/lib/python3.10/site-packages/sklearn/metrics/_scorer.py", line 316, in _score
+    y_pred = method_caller(clf, "predict_proba", X)
+  File "/home/vinicius/UFERSA/cilab/euthyroid_sick_syndrome/cilab/lib/python3.10/site-packages/sklearn/metrics/_scorer.py", line 78, in _cached_call
+    result = getattr(estimator, method)(*args, **kwargs)
+  File "/home/vinicius/UFERSA/cilab/euthyroid_sick_syndrome/cilab/lib/python3.10/site-packages/pycaret/internal/pipeline.py", line 121, in __getattr__
+    return getattr(self._final_estimator, name)
+AttributeError: 'RidgeClassifier' object has no attribute 'predict_proba'
+
+  warnings.warn(
+
+2023-08-07 11:10:08,967:WARNING:/home/vinicius/UFERSA/cilab/euthyroid_sick_syndrome/cilab/lib/python3.10/site-packages/pycaret/internal/metrics.py:138: FitFailedWarning: Metric 'make_scorer(roc_auc_score, needs_proba=True, error_score=0.0, average=weighted, multi_class=ovr)' failed and error score 0.0 has been returned instead. If this is a custom metric, this usually means that the error is in the metric code. Full exception below:
+Traceback (most recent call last):
+  File "/home/vinicius/UFERSA/cilab/euthyroid_sick_syndrome/cilab/lib/python3.10/site-packages/sklearn/metrics/_scorer.py", line 76, in _cached_call
+    return cache[method]
+KeyError: 'predict_proba'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/vinicius/UFERSA/cilab/euthyroid_sick_syndrome/cilab/lib/python3.10/site-packages/pycaret/internal/metrics.py", line 130, in _score
+    return super()._score(
+  File "/home/vinicius/UFERSA/cilab/euthyroid_sick_syndrome/cilab/lib/python3.10/site-packages/sklearn/metrics/_scorer.py", line 316, in _score
+    y_pred = method_caller(clf, "predict_proba", X)
+  File "/home/vinicius/UFERSA/cilab/euthyroid_sick_syndrome/cilab/lib/python3.10/site-packages/sklearn/metrics/_scorer.py", line 78, in _cached_call
+    result = getattr(estimator, method)(*args, **kwargs)
+  File "/home/vinicius/UFERSA/cilab/euthyroid_sick_syndrome/cilab/lib/python3.10/site-packages/pycaret/internal/pipeline.py", line 121, in __getattr__
+    return getattr(self._final_estimator, name)
+AttributeError: 'RidgeClassifier' object has no attribute 'predict_proba'
+
+  warnings.warn(
+
+2023-08-07 11:10:08,979:WARNING:/home/vinicius/UFERSA/cilab/euthyroid_sick_syndrome/cilab/lib/python3.10/site-packages/pycaret/internal/metrics.py:138: FitFailedWarning: Metric 'make_scorer(roc_auc_score, needs_proba=True, error_score=0.0, average=weighted, multi_class=ovr)' failed and error score 0.0 has been returned instead. If this is a custom metric, this usually means that the error is in the metric code. Full exception below:
+Traceback (most recent call last):
+  File "/home/vinicius/UFERSA/cilab/euthyroid_sick_syndrome/cilab/lib/python3.10/site-packages/sklearn/metrics/_scorer.py", line 76, in _cached_call
+    return cache[method]
+KeyError: 'predict_proba'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/vinicius/UFERSA/cilab/euthyroid_sick_syndrome/cilab/lib/python3.10/site-packages/pycaret/internal/metrics.py", line 130, in _score
+    return super()._score(
+  File "/home/vinicius/UFERSA/cilab/euthyroid_sick_syndrome/cilab/lib/python3.10/site-packages/sklearn/metrics/_scorer.py", line 316, in _score
+    y_pred = method_caller(clf, "predict_proba", X)
+  File "/home/vinicius/UFERSA/cilab/euthyroid_sick_syndrome/cilab/lib/python3.10/site-packages/sklearn/metrics/_scorer.py", line 78, in _cached_call
+    result = getattr(estimator, method)(*args, **kwargs)
+  File "/home/vinicius/UFERSA/cilab/euthyroid_sick_syndrome/cilab/lib/python3.10/site-packages/pycaret/internal/pipeline.py", line 121, in __getattr__
+    return getattr(self._final_estimator, name)
+AttributeError: 'RidgeClassifier' object has no attribute 'predict_proba'
+
+  warnings.warn(
+
+2023-08-07 11:10:08,980:WARNING:/home/vinicius/UFERSA/cilab/euthyroid_sick_syndrome/cilab/lib/python3.10/site-packages/pycaret/internal/metrics.py:138: FitFailedWarning: Metric 'make_scorer(roc_auc_score, needs_proba=True, error_score=0.0, average=weighted, multi_class=ovr)' failed and error score 0.0 has been returned instead. If this is a custom metric, this usually means that the error is in the metric code. Full exception below:
+Traceback (most recent call last):
+  File "/home/vinicius/UFERSA/cilab/euthyroid_sick_syndrome/cilab/lib/python3.10/site-packages/sklearn/metrics/_scorer.py", line 76, in _cached_call
+    return cache[method]
+KeyError: 'predict_proba'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/vinicius/UFERSA/cilab/euthyroid_sick_syndrome/cilab/lib/python3.10/site-packages/pycaret/internal/metrics.py", line 130, in _score
+    return super()._score(
+  File "/home/vinicius/UFERSA/cilab/euthyroid_sick_syndrome/cilab/lib/python3.10/site-packages/sklearn/metrics/_scorer.py", line 316, in _score
+    y_pred = method_caller(clf, "predict_proba", X)
+  File "/home/vinicius/UFERSA/cilab/euthyroid_sick_syndrome/cilab/lib/python3.10/site-packages/sklearn/metrics/_scorer.py", line 78, in _cached_call
+    result = getattr(estimator, method)(*args, **kwargs)
+  File "/home/vinicius/UFERSA/cilab/euthyroid_sick_syndrome/cilab/lib/python3.10/site-packages/pycaret/internal/pipeline.py", line 121, in __getattr__
+    return getattr(self._final_estimator, name)
+AttributeError: 'RidgeClassifier' object has no attribute 'predict_proba'
+
+  warnings.warn(
+
+2023-08-07 11:10:08,983:WARNING:/home/vinicius/UFERSA/cilab/euthyroid_sick_syndrome/cilab/lib/python3.10/site-packages/pycaret/internal/metrics.py:138: FitFailedWarning: Metric 'make_scorer(roc_auc_score, needs_proba=True, error_score=0.0, average=weighted, multi_class=ovr)' failed and error score 0.0 has been returned instead. If this is a custom metric, this usually means that the error is in the metric code. Full exception below:
+Traceback (most recent call last):
+  File "/home/vinicius/UFERSA/cilab/euthyroid_sick_syndrome/cilab/lib/python3.10/site-packages/sklearn/metrics/_scorer.py", line 76, in _cached_call
+    return cache[method]
+KeyError: 'predict_proba'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/vinicius/UFERSA/cilab/euthyroid_sick_syndrome/cilab/lib/python3.10/site-packages/pycaret/internal/metrics.py", line 130, in _score
+    return super()._score(
+  File "/home/vinicius/UFERSA/cilab/euthyroid_sick_syndrome/cilab/lib/python3.10/site-packages/sklearn/metrics/_scorer.py", line 316, in _score
+    y_pred = method_caller(clf, "predict_proba", X)
+  File "/home/vinicius/UFERSA/cilab/euthyroid_sick_syndrome/cilab/lib/python3.10/site-packages/sklearn/metrics/_scorer.py", line 78, in _cached_call
+    result = getattr(estimator, method)(*args, **kwargs)
+  File "/home/vinicius/UFERSA/cilab/euthyroid_sick_syndrome/cilab/lib/python3.10/site-packages/pycaret/internal/pipeline.py", line 121, in __getattr__
+    return getattr(self._final_estimator, name)
+AttributeError: 'RidgeClassifier' object has no attribute 'predict_proba'
+
+  warnings.warn(
+
+2023-08-07 11:10:09,039:WARNING:/home/vinicius/UFERSA/cilab/euthyroid_sick_syndrome/cilab/lib/python3.10/site-packages/pycaret/internal/metrics.py:138: FitFailedWarning: Metric 'make_scorer(roc_auc_score, needs_proba=True, error_score=0.0, average=weighted, multi_class=ovr)' failed and error score 0.0 has been returned instead. If this is a custom metric, this usually means that the error is in the metric code. Full exception below:
+Traceback (most recent call last):
+  File "/home/vinicius/UFERSA/cilab/euthyroid_sick_syndrome/cilab/lib/python3.10/site-packages/sklearn/metrics/_scorer.py", line 76, in _cached_call
+    return cache[method]
+KeyError: 'predict_proba'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/vinicius/UFERSA/cilab/euthyroid_sick_syndrome/cilab/lib/python3.10/site-packages/pycaret/internal/metrics.py", line 130, in _score
+    return super()._score(
+  File "/home/vinicius/UFERSA/cilab/euthyroid_sick_syndrome/cilab/lib/python3.10/site-packages/sklearn/metrics/_scorer.py", line 316, in _score
+    y_pred = method_caller(clf, "predict_proba", X)
+  File "/home/vinicius/UFERSA/cilab/euthyroid_sick_syndrome/cilab/lib/python3.10/site-packages/sklearn/metrics/_scorer.py", line 78, in _cached_call
+    result = getattr(estimator, method)(*args, **kwargs)
+  File "/home/vinicius/UFERSA/cilab/euthyroid_sick_syndrome/cilab/lib/python3.10/site-packages/pycaret/internal/pipeline.py", line 121, in __getattr__
+    return getattr(self._final_estimator, name)
+AttributeError: 'RidgeClassifier' object has no attribute 'predict_proba'
+
+  warnings.warn(
+
+2023-08-07 11:10:09,040:WARNING:/home/vinicius/UFERSA/cilab/euthyroid_sick_syndrome/cilab/lib/python3.10/site-packages/pycaret/internal/metrics.py:138: FitFailedWarning: Metric 'make_scorer(roc_auc_score, needs_proba=True, error_score=0.0, average=weighted, multi_class=ovr)' failed and error score 0.0 has been returned instead. If this is a custom metric, this usually means that the error is in the metric code. Full exception below:
+Traceback (most recent call last):
+  File "/home/vinicius/UFERSA/cilab/euthyroid_sick_syndrome/cilab/lib/python3.10/site-packages/sklearn/metrics/_scorer.py", line 76, in _cached_call
+    return cache[method]
+KeyError: 'predict_proba'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/vinicius/UFERSA/cilab/euthyroid_sick_syndrome/cilab/lib/python3.10/site-packages/pycaret/internal/metrics.py", line 130, in _score
+    return super()._score(
+  File "/home/vinicius/UFERSA/cilab/euthyroid_sick_syndrome/cilab/lib/python3.10/site-packages/sklearn/metrics/_scorer.py", line 316, in _score
+    y_pred = method_caller(clf, "predict_proba", X)
+  File "/home/vinicius/UFERSA/cilab/euthyroid_sick_syndrome/cilab/lib/python3.10/site-packages/sklearn/metrics/_scorer.py", line 78, in _cached_call
+    result = getattr(estimator, method)(*args, **kwargs)
+  File "/home/vinicius/UFERSA/cilab/euthyroid_sick_syndrome/cilab/lib/python3.10/site-packages/pycaret/internal/pipeline.py", line 121, in __getattr__
+    return getattr(self._final_estimator, name)
+AttributeError: 'RidgeClassifier' object has no attribute 'predict_proba'
+
+  warnings.warn(
+
+2023-08-07 11:10:09,056:INFO:Calculating mean and std
+2023-08-07 11:10:09,058:INFO:Creating metrics dataframe
+2023-08-07 11:10:09,079:INFO:Uploading results into container
+2023-08-07 11:10:09,080:INFO:Uploading model into container now
+2023-08-07 11:10:09,081:INFO:_master_model_container: 6
+2023-08-07 11:10:09,081:INFO:_display_container: 2
+2023-08-07 11:10:09,082:INFO:RidgeClassifier(alpha=1.0, class_weight=None, copy_X=True, fit_intercept=True,
+                max_iter=None, positive=False, random_state=6955, solver='auto',
+                tol=0.0001)
+2023-08-07 11:10:09,082:INFO:create_model() successfully completed......................................
+2023-08-07 11:10:09,173:INFO:SubProcess create_model() end ==================================
+2023-08-07 11:10:09,173:INFO:Creating metrics dataframe
+2023-08-07 11:10:09,187:INFO:Initializing Random Forest Classifier
+2023-08-07 11:10:09,187:INFO:Total runtime is 0.10811444918314617 minutes
+2023-08-07 11:10:09,191:INFO:SubProcess create_model() called ==================================
+2023-08-07 11:10:09,192:INFO:Initializing create_model()
+2023-08-07 11:10:09,192:INFO:create_model(self=<pycaret.classification.oop.ClassificationExperiment object at 0x7feaad25bf70>, estimator=rf, fold=StratifiedKFold(n_splits=10, random_state=None, shuffle=False), round=4, cross_validation=True, predict=True, fit_kwargs={}, groups=None, refit=False, probability_threshold=None, experiment_custom_tags=None, verbose=False, system=False, add_to_model_list=True, metrics=None, display=<pycaret.internal.display.display.CommonDisplay object at 0x7feaac7f85b0>, model_only=True, return_train_score=False, kwargs={})
+2023-08-07 11:10:09,192:INFO:Checking exceptions
+2023-08-07 11:10:09,192:INFO:Importing libraries
+2023-08-07 11:10:09,192:INFO:Copying training dataset
+2023-08-07 11:10:09,199:INFO:Defining folds
+2023-08-07 11:10:09,200:INFO:Declaring metric variables
+2023-08-07 11:10:09,204:INFO:Importing untrained model
+2023-08-07 11:10:09,210:INFO:Random Forest Classifier Imported successfully
+2023-08-07 11:10:09,224:INFO:Starting cross validation
+2023-08-07 11:10:09,225:INFO:Cross validating with StratifiedKFold(n_splits=10, random_state=None, shuffle=False), n_jobs=-1
+2023-08-07 11:10:11,992:INFO:Calculating mean and std
+2023-08-07 11:10:11,995:INFO:Creating metrics dataframe
+2023-08-07 11:10:12,021:INFO:Uploading results into container
+2023-08-07 11:10:12,022:INFO:Uploading model into container now
+2023-08-07 11:10:12,022:INFO:_master_model_container: 7
+2023-08-07 11:10:12,022:INFO:_display_container: 2
+2023-08-07 11:10:12,023:INFO:RandomForestClassifier(bootstrap=True, ccp_alpha=0.0, class_weight=None,
+                       criterion='gini', max_depth=None, max_features='sqrt',
+                       max_leaf_nodes=None, max_samples=None,
+                       min_impurity_decrease=0.0, min_samples_leaf=1,
+                       min_samples_split=2, min_weight_fraction_leaf=0.0,
+                       n_estimators=100, n_jobs=-1, oob_score=False,
+                       random_state=6955, verbose=0, warm_start=False)
+2023-08-07 11:10:12,023:INFO:create_model() successfully completed......................................
+2023-08-07 11:10:12,110:INFO:SubProcess create_model() end ==================================
+2023-08-07 11:10:12,111:INFO:Creating metrics dataframe
+2023-08-07 11:10:12,123:INFO:Initializing Quadratic Discriminant Analysis
+2023-08-07 11:10:12,123:INFO:Total runtime is 0.1570516586303711 minutes
+2023-08-07 11:10:12,128:INFO:SubProcess create_model() called ==================================
+2023-08-07 11:10:12,129:INFO:Initializing create_model()
+2023-08-07 11:10:12,129:INFO:create_model(self=<pycaret.classification.oop.ClassificationExperiment object at 0x7feaad25bf70>, estimator=qda, fold=StratifiedKFold(n_splits=10, random_state=None, shuffle=False), round=4, cross_validation=True, predict=True, fit_kwargs={}, groups=None, refit=False, probability_threshold=None, experiment_custom_tags=None, verbose=False, system=False, add_to_model_list=True, metrics=None, display=<pycaret.internal.display.display.CommonDisplay object at 0x7feaac7f85b0>, model_only=True, return_train_score=False, kwargs={})
+2023-08-07 11:10:12,129:INFO:Checking exceptions
+2023-08-07 11:10:12,129:INFO:Importing libraries
+2023-08-07 11:10:12,130:INFO:Copying training dataset
+2023-08-07 11:10:12,137:INFO:Defining folds
+2023-08-07 11:10:12,138:INFO:Declaring metric variables
+2023-08-07 11:10:12,143:INFO:Importing untrained model
+2023-08-07 11:10:12,153:INFO:Quadratic Discriminant Analysis Imported successfully
+2023-08-07 11:10:12,168:INFO:Starting cross validation
+2023-08-07 11:10:12,169:INFO:Cross validating with StratifiedKFold(n_splits=10, random_state=None, shuffle=False), n_jobs=-1
+2023-08-07 11:10:12,482:INFO:Calculating mean and std
+2023-08-07 11:10:12,484:INFO:Creating metrics dataframe
+2023-08-07 11:10:12,510:INFO:Uploading results into container
+2023-08-07 11:10:12,511:INFO:Uploading model into container now
+2023-08-07 11:10:12,512:INFO:_master_model_container: 8
+2023-08-07 11:10:12,512:INFO:_display_container: 2
+2023-08-07 11:10:12,512:INFO:QuadraticDiscriminantAnalysis(priors=None, reg_param=0.0,
+                              store_covariance=False, tol=0.0001)
+2023-08-07 11:10:12,512:INFO:create_model() successfully completed......................................
+2023-08-07 11:10:12,593:INFO:SubProcess create_model() end ==================================
+2023-08-07 11:10:12,593:INFO:Creating metrics dataframe
+2023-08-07 11:10:12,607:INFO:Initializing Ada Boost Classifier
+2023-08-07 11:10:12,607:INFO:Total runtime is 0.16510812044143677 minutes
+2023-08-07 11:10:12,611:INFO:SubProcess create_model() called ==================================
+2023-08-07 11:10:12,612:INFO:Initializing create_model()
+2023-08-07 11:10:12,612:INFO:create_model(self=<pycaret.classification.oop.ClassificationExperiment object at 0x7feaad25bf70>, estimator=ada, fold=StratifiedKFold(n_splits=10, random_state=None, shuffle=False), round=4, cross_validation=True, predict=True, fit_kwargs={}, groups=None, refit=False, probability_threshold=None, experiment_custom_tags=None, verbose=False, system=False, add_to_model_list=True, metrics=None, display=<pycaret.internal.display.display.CommonDisplay object at 0x7feaac7f85b0>, model_only=True, return_train_score=False, kwargs={})
+2023-08-07 11:10:12,612:INFO:Checking exceptions
+2023-08-07 11:10:12,612:INFO:Importing libraries
+2023-08-07 11:10:12,612:INFO:Copying training dataset
+2023-08-07 11:10:12,619:INFO:Defining folds
+2023-08-07 11:10:12,619:INFO:Declaring metric variables
+2023-08-07 11:10:12,623:INFO:Importing untrained model
+2023-08-07 11:10:12,630:INFO:Ada Boost Classifier Imported successfully
+2023-08-07 11:10:12,640:INFO:Starting cross validation
+2023-08-07 11:10:12,641:INFO:Cross validating with StratifiedKFold(n_splits=10, random_state=None, shuffle=False), n_jobs=-1
+2023-08-07 11:10:13,952:INFO:Calculating mean and std
+2023-08-07 11:10:13,955:INFO:Creating metrics dataframe
+2023-08-07 11:10:13,984:INFO:Uploading results into container
+2023-08-07 11:10:13,985:INFO:Uploading model into container now
+2023-08-07 11:10:13,985:INFO:_master_model_container: 9
+2023-08-07 11:10:13,986:INFO:_display_container: 2
+2023-08-07 11:10:13,986:INFO:AdaBoostClassifier(algorithm='SAMME.R', base_estimator='deprecated',
+                   estimator=None, learning_rate=1.0, n_estimators=50,
+                   random_state=6955)
+2023-08-07 11:10:13,986:INFO:create_model() successfully completed......................................
+2023-08-07 11:10:14,075:INFO:SubProcess create_model() end ==================================
+2023-08-07 11:10:14,075:INFO:Creating metrics dataframe
+2023-08-07 11:10:14,087:INFO:Initializing Gradient Boosting Classifier
+2023-08-07 11:10:14,087:INFO:Total runtime is 0.18978488445281982 minutes
+2023-08-07 11:10:14,091:INFO:SubProcess create_model() called ==================================
+2023-08-07 11:10:14,092:INFO:Initializing create_model()
+2023-08-07 11:10:14,092:INFO:create_model(self=<pycaret.classification.oop.ClassificationExperiment object at 0x7feaad25bf70>, estimator=gbc, fold=StratifiedKFold(n_splits=10, random_state=None, shuffle=False), round=4, cross_validation=True, predict=True, fit_kwargs={}, groups=None, refit=False, probability_threshold=None, experiment_custom_tags=None, verbose=False, system=False, add_to_model_list=True, metrics=None, display=<pycaret.internal.display.display.CommonDisplay object at 0x7feaac7f85b0>, model_only=True, return_train_score=False, kwargs={})
+2023-08-07 11:10:14,092:INFO:Checking exceptions
+2023-08-07 11:10:14,092:INFO:Importing libraries
+2023-08-07 11:10:14,092:INFO:Copying training dataset
+2023-08-07 11:10:14,099:INFO:Defining folds
+2023-08-07 11:10:14,099:INFO:Declaring metric variables
+2023-08-07 11:10:14,104:INFO:Importing untrained model
+2023-08-07 11:10:14,112:INFO:Gradient Boosting Classifier Imported successfully
+2023-08-07 11:10:14,134:INFO:Starting cross validation
+2023-08-07 11:10:14,135:INFO:Cross validating with StratifiedKFold(n_splits=10, random_state=None, shuffle=False), n_jobs=-1
+2023-08-07 11:10:16,397:INFO:Calculating mean and std
+2023-08-07 11:10:16,399:INFO:Creating metrics dataframe
+2023-08-07 11:10:16,430:INFO:Uploading results into container
+2023-08-07 11:10:16,431:INFO:Uploading model into container now
+2023-08-07 11:10:16,432:INFO:_master_model_container: 10
+2023-08-07 11:10:16,432:INFO:_display_container: 2
+2023-08-07 11:10:16,433:INFO:GradientBoostingClassifier(ccp_alpha=0.0, criterion='friedman_mse', init=None,
+                           learning_rate=0.1, loss='log_loss', max_depth=3,
+                           max_features=None, max_leaf_nodes=None,
+                           min_impurity_decrease=0.0, min_samples_leaf=1,
+                           min_samples_split=2, min_weight_fraction_leaf=0.0,
+                           n_estimators=100, n_iter_no_change=None,
+                           random_state=6955, subsample=1.0, tol=0.0001,
+                           validation_fraction=0.1, verbose=0,
+                           warm_start=False)
+2023-08-07 11:10:16,433:INFO:create_model() successfully completed......................................
+2023-08-07 11:10:16,520:INFO:SubProcess create_model() end ==================================
+2023-08-07 11:10:16,520:INFO:Creating metrics dataframe
+2023-08-07 11:10:16,534:INFO:Initializing Linear Discriminant Analysis
+2023-08-07 11:10:16,534:INFO:Total runtime is 0.23056485652923583 minutes
+2023-08-07 11:10:16,538:INFO:SubProcess create_model() called ==================================
+2023-08-07 11:10:16,539:INFO:Initializing create_model()
+2023-08-07 11:10:16,539:INFO:create_model(self=<pycaret.classification.oop.ClassificationExperiment object at 0x7feaad25bf70>, estimator=lda, fold=StratifiedKFold(n_splits=10, random_state=None, shuffle=False), round=4, cross_validation=True, predict=True, fit_kwargs={}, groups=None, refit=False, probability_threshold=None, experiment_custom_tags=None, verbose=False, system=False, add_to_model_list=True, metrics=None, display=<pycaret.internal.display.display.CommonDisplay object at 0x7feaac7f85b0>, model_only=True, return_train_score=False, kwargs={})
+2023-08-07 11:10:16,539:INFO:Checking exceptions
+2023-08-07 11:10:16,539:INFO:Importing libraries
+2023-08-07 11:10:16,539:INFO:Copying training dataset
+2023-08-07 11:10:16,547:INFO:Defining folds
+2023-08-07 11:10:16,547:INFO:Declaring metric variables
+2023-08-07 11:10:16,552:INFO:Importing untrained model
+2023-08-07 11:10:16,557:INFO:Linear Discriminant Analysis Imported successfully
+2023-08-07 11:10:16,569:INFO:Starting cross validation
+2023-08-07 11:10:16,571:INFO:Cross validating with StratifiedKFold(n_splits=10, random_state=None, shuffle=False), n_jobs=-1
+2023-08-07 11:10:16,895:INFO:Calculating mean and std
+2023-08-07 11:10:16,897:INFO:Creating metrics dataframe
+2023-08-07 11:10:16,928:INFO:Uploading results into container
+2023-08-07 11:10:16,929:INFO:Uploading model into container now
+2023-08-07 11:10:16,929:INFO:_master_model_container: 11
+2023-08-07 11:10:16,929:INFO:_display_container: 2
+2023-08-07 11:10:16,930:INFO:LinearDiscriminantAnalysis(covariance_estimator=None, n_components=None,
+                           priors=None, shrinkage=None, solver='svd',
+                           store_covariance=False, tol=0.0001)
+2023-08-07 11:10:16,930:INFO:create_model() successfully completed......................................
+2023-08-07 11:10:17,018:INFO:SubProcess create_model() end ==================================
+2023-08-07 11:10:17,018:INFO:Creating metrics dataframe
+2023-08-07 11:10:17,033:INFO:Initializing Extra Trees Classifier
+2023-08-07 11:10:17,033:INFO:Total runtime is 0.23888303041458128 minutes
+2023-08-07 11:10:17,038:INFO:SubProcess create_model() called ==================================
+2023-08-07 11:10:17,038:INFO:Initializing create_model()
+2023-08-07 11:10:17,039:INFO:create_model(self=<pycaret.classification.oop.ClassificationExperiment object at 0x7feaad25bf70>, estimator=et, fold=StratifiedKFold(n_splits=10, random_state=None, shuffle=False), round=4, cross_validation=True, predict=True, fit_kwargs={}, groups=None, refit=False, probability_threshold=None, experiment_custom_tags=None, verbose=False, system=False, add_to_model_list=True, metrics=None, display=<pycaret.internal.display.display.CommonDisplay object at 0x7feaac7f85b0>, model_only=True, return_train_score=False, kwargs={})
+2023-08-07 11:10:17,039:INFO:Checking exceptions
+2023-08-07 11:10:17,039:INFO:Importing libraries
+2023-08-07 11:10:17,039:INFO:Copying training dataset
+2023-08-07 11:10:17,048:INFO:Defining folds
+2023-08-07 11:10:17,049:INFO:Declaring metric variables
+2023-08-07 11:10:17,055:INFO:Importing untrained model
+2023-08-07 11:10:17,060:INFO:Extra Trees Classifier Imported successfully
+2023-08-07 11:10:17,072:INFO:Starting cross validation
+2023-08-07 11:10:17,075:INFO:Cross validating with StratifiedKFold(n_splits=10, random_state=None, shuffle=False), n_jobs=-1
+2023-08-07 11:10:19,220:INFO:Calculating mean and std
+2023-08-07 11:10:19,222:INFO:Creating metrics dataframe
+2023-08-07 11:10:19,255:INFO:Uploading results into container
+2023-08-07 11:10:19,256:INFO:Uploading model into container now
+2023-08-07 11:10:19,256:INFO:_master_model_container: 12
+2023-08-07 11:10:19,257:INFO:_display_container: 2
+2023-08-07 11:10:19,257:INFO:ExtraTreesClassifier(bootstrap=False, ccp_alpha=0.0, class_weight=None,
+                     criterion='gini', max_depth=None, max_features='sqrt',
+                     max_leaf_nodes=None, max_samples=None,
+                     min_impurity_decrease=0.0, min_samples_leaf=1,
+                     min_samples_split=2, min_weight_fraction_leaf=0.0,
+                     n_estimators=100, n_jobs=-1, oob_score=False,
+                     random_state=6955, verbose=0, warm_start=False)
+2023-08-07 11:10:19,257:INFO:create_model() successfully completed......................................
+2023-08-07 11:10:19,349:INFO:SubProcess create_model() end ==================================
+2023-08-07 11:10:19,349:INFO:Creating metrics dataframe
+2023-08-07 11:10:19,369:INFO:Initializing Light Gradient Boosting Machine
+2023-08-07 11:10:19,369:INFO:Total runtime is 0.27780956427256265 minutes
+2023-08-07 11:10:19,374:INFO:SubProcess create_model() called ==================================
+2023-08-07 11:10:19,375:INFO:Initializing create_model()
+2023-08-07 11:10:19,375:INFO:create_model(self=<pycaret.classification.oop.ClassificationExperiment object at 0x7feaad25bf70>, estimator=lightgbm, fold=StratifiedKFold(n_splits=10, random_state=None, shuffle=False), round=4, cross_validation=True, predict=True, fit_kwargs={}, groups=None, refit=False, probability_threshold=None, experiment_custom_tags=None, verbose=False, system=False, add_to_model_list=True, metrics=None, display=<pycaret.internal.display.display.CommonDisplay object at 0x7feaac7f85b0>, model_only=True, return_train_score=False, kwargs={})
+2023-08-07 11:10:19,375:INFO:Checking exceptions
+2023-08-07 11:10:19,375:INFO:Importing libraries
+2023-08-07 11:10:19,375:INFO:Copying training dataset
+2023-08-07 11:10:19,382:INFO:Defining folds
+2023-08-07 11:10:19,383:INFO:Declaring metric variables
+2023-08-07 11:10:19,387:INFO:Importing untrained model
+2023-08-07 11:10:19,395:INFO:Light Gradient Boosting Machine Imported successfully
+2023-08-07 11:10:19,410:INFO:Starting cross validation
+2023-08-07 11:10:19,412:INFO:Cross validating with StratifiedKFold(n_splits=10, random_state=None, shuffle=False), n_jobs=-1
+2023-08-07 11:10:20,163:INFO:Calculating mean and std
+2023-08-07 11:10:20,165:INFO:Creating metrics dataframe
+2023-08-07 11:10:20,204:INFO:Uploading results into container
+2023-08-07 11:10:20,205:INFO:Uploading model into container now
+2023-08-07 11:10:20,206:INFO:_master_model_container: 13
+2023-08-07 11:10:20,206:INFO:_display_container: 2
+2023-08-07 11:10:20,206:INFO:LGBMClassifier(boosting_type='gbdt', class_weight=None, colsample_bytree=1.0,
+               importance_type='split', learning_rate=0.1, max_depth=-1,
+               min_child_samples=20, min_child_weight=0.001, min_split_gain=0.0,
+               n_estimators=100, n_jobs=-1, num_leaves=31, objective=None,
+               random_state=6955, reg_alpha=0.0, reg_lambda=0.0, silent='warn',
+               subsample=1.0, subsample_for_bin=200000, subsample_freq=0)
+2023-08-07 11:10:20,206:INFO:create_model() successfully completed......................................
+2023-08-07 11:10:20,291:INFO:SubProcess create_model() end ==================================
+2023-08-07 11:10:20,292:INFO:Creating metrics dataframe
+2023-08-07 11:10:20,307:INFO:Initializing Dummy Classifier
+2023-08-07 11:10:20,307:INFO:Total runtime is 0.2934471845626831 minutes
+2023-08-07 11:10:20,312:INFO:SubProcess create_model() called ==================================
+2023-08-07 11:10:20,312:INFO:Initializing create_model()
+2023-08-07 11:10:20,312:INFO:create_model(self=<pycaret.classification.oop.ClassificationExperiment object at 0x7feaad25bf70>, estimator=dummy, fold=StratifiedKFold(n_splits=10, random_state=None, shuffle=False), round=4, cross_validation=True, predict=True, fit_kwargs={}, groups=None, refit=False, probability_threshold=None, experiment_custom_tags=None, verbose=False, system=False, add_to_model_list=True, metrics=None, display=<pycaret.internal.display.display.CommonDisplay object at 0x7feaac7f85b0>, model_only=True, return_train_score=False, kwargs={})
+2023-08-07 11:10:20,313:INFO:Checking exceptions
+2023-08-07 11:10:20,313:INFO:Importing libraries
+2023-08-07 11:10:20,313:INFO:Copying training dataset
+2023-08-07 11:10:20,318:INFO:Defining folds
+2023-08-07 11:10:20,319:INFO:Declaring metric variables
+2023-08-07 11:10:20,323:INFO:Importing untrained model
+2023-08-07 11:10:20,331:INFO:Dummy Classifier Imported successfully
+2023-08-07 11:10:20,340:INFO:Starting cross validation
+2023-08-07 11:10:20,341:INFO:Cross validating with StratifiedKFold(n_splits=10, random_state=None, shuffle=False), n_jobs=-1
+2023-08-07 11:10:20,496:WARNING:/home/vinicius/UFERSA/cilab/euthyroid_sick_syndrome/cilab/lib/python3.10/site-packages/sklearn/metrics/_classification.py:1344: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 due to no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+
+2023-08-07 11:10:20,507:WARNING:/home/vinicius/UFERSA/cilab/euthyroid_sick_syndrome/cilab/lib/python3.10/site-packages/sklearn/metrics/_classification.py:1344: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 due to no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+
+2023-08-07 11:10:20,510:WARNING:/home/vinicius/UFERSA/cilab/euthyroid_sick_syndrome/cilab/lib/python3.10/site-packages/sklearn/metrics/_classification.py:1344: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 due to no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+
+2023-08-07 11:10:20,514:WARNING:/home/vinicius/UFERSA/cilab/euthyroid_sick_syndrome/cilab/lib/python3.10/site-packages/sklearn/metrics/_classification.py:1344: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 due to no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+
+2023-08-07 11:10:20,517:WARNING:/home/vinicius/UFERSA/cilab/euthyroid_sick_syndrome/cilab/lib/python3.10/site-packages/sklearn/metrics/_classification.py:1344: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 due to no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+
+2023-08-07 11:10:20,542:WARNING:/home/vinicius/UFERSA/cilab/euthyroid_sick_syndrome/cilab/lib/python3.10/site-packages/sklearn/metrics/_classification.py:1344: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 due to no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+
+2023-08-07 11:10:20,640:INFO:Calculating mean and std
+2023-08-07 11:10:20,642:INFO:Creating metrics dataframe
+2023-08-07 11:10:20,680:INFO:Uploading results into container
+2023-08-07 11:10:20,681:INFO:Uploading model into container now
+2023-08-07 11:10:20,682:INFO:_master_model_container: 14
+2023-08-07 11:10:20,682:INFO:_display_container: 2
+2023-08-07 11:10:20,682:INFO:DummyClassifier(constant=None, random_state=6955, strategy='prior')
+2023-08-07 11:10:20,683:INFO:create_model() successfully completed......................................
+2023-08-07 11:10:20,767:INFO:SubProcess create_model() end ==================================
+2023-08-07 11:10:20,767:INFO:Creating metrics dataframe
+2023-08-07 11:10:20,798:INFO:Initializing create_model()
+2023-08-07 11:10:20,798:INFO:create_model(self=<pycaret.classification.oop.ClassificationExperiment object at 0x7feaad25bf70>, estimator=ExtraTreesClassifier(bootstrap=False, ccp_alpha=0.0, class_weight=None,
+                     criterion='gini', max_depth=None, max_features='sqrt',
+                     max_leaf_nodes=None, max_samples=None,
+                     min_impurity_decrease=0.0, min_samples_leaf=1,
+                     min_samples_split=2, min_weight_fraction_leaf=0.0,
+                     n_estimators=100, n_jobs=-1, oob_score=False,
+                     random_state=6955, verbose=0, warm_start=False), fold=StratifiedKFold(n_splits=10, random_state=None, shuffle=False), round=4, cross_validation=False, predict=False, fit_kwargs={}, groups=None, refit=True, probability_threshold=None, experiment_custom_tags=None, verbose=False, system=False, add_to_model_list=True, metrics=None, display=None, model_only=True, return_train_score=False, kwargs={})
+2023-08-07 11:10:20,798:INFO:Checking exceptions
+2023-08-07 11:10:20,800:INFO:Importing libraries
+2023-08-07 11:10:20,801:INFO:Copying training dataset
+2023-08-07 11:10:20,806:INFO:Defining folds
+2023-08-07 11:10:20,807:INFO:Declaring metric variables
+2023-08-07 11:10:20,807:INFO:Importing untrained model
+2023-08-07 11:10:20,807:INFO:Declaring custom model
+2023-08-07 11:10:20,808:INFO:Extra Trees Classifier Imported successfully
+2023-08-07 11:10:20,809:INFO:Cross validation set to False
+2023-08-07 11:10:20,809:INFO:Fitting Model
+2023-08-07 11:10:21,241:INFO:ExtraTreesClassifier(bootstrap=False, ccp_alpha=0.0, class_weight=None,
+                     criterion='gini', max_depth=None, max_features='sqrt',
+                     max_leaf_nodes=None, max_samples=None,
+                     min_impurity_decrease=0.0, min_samples_leaf=1,
+                     min_samples_split=2, min_weight_fraction_leaf=0.0,
+                     n_estimators=100, n_jobs=-1, oob_score=False,
+                     random_state=6955, verbose=0, warm_start=False)
+2023-08-07 11:10:21,242:INFO:create_model() successfully completed......................................
+2023-08-07 11:10:21,378:INFO:_master_model_container: 14
+2023-08-07 11:10:21,379:INFO:_display_container: 2
+2023-08-07 11:10:21,380:INFO:ExtraTreesClassifier(bootstrap=False, ccp_alpha=0.0, class_weight=None,
+                     criterion='gini', max_depth=None, max_features='sqrt',
+                     max_leaf_nodes=None, max_samples=None,
+                     min_impurity_decrease=0.0, min_samples_leaf=1,
+                     min_samples_split=2, min_weight_fraction_leaf=0.0,
+                     n_estimators=100, n_jobs=-1, oob_score=False,
+                     random_state=6955, verbose=0, warm_start=False)
+2023-08-07 11:10:21,380:INFO:compare_models() successfully completed......................................
