@@ -18,18 +18,23 @@ dataset = dataset[['age', 'on_thyroxine', 'query_hypothyroid', 'TSH', 'T3', 'TT4
 
 dataset_res, ouput_label = balance_dataset_smote(dataset, output_label_dataset, random_state=42, k_neighbors=5)
 
+
+
+print(dataset_res.shape)
+
+
 # Dividindo os dados em treino e teste em 80% e 20% respectivamente
 # X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=3, stratify=y)
 input_train, input_test, output_train, output_test = slipt_and_standardize_dataset(dataset=dataset_res, output_label=ouput_label)
 
 # Modelo de rede perceptron multicamadas com uma camada oculta de 64 neurônios
-# e camada de saída com 3 neurônios (3 classes)
+# e camada de saída com 1 neurônios (1 classes)
+
 model = tf.keras.models.Sequential()
-model.add(tf.keras.Input(shape=(input_train.shape[1],)))
-model.add(tf.keras.layers.Dense(128, activation='sigmoid'))
-model.add(tf.keras.layers.Dense(256, activation='sigmoid'))
-model.add(tf.keras.layers.Dense(1, activation='sigmoid'))
+model.add(tf.keras.layers.Dense(64, input_dim=8, activation='sigmoid'))
+model.add(tf.keras.layers.Dense(1, activation='softmax'))
 model.summary() #visualizando o modelo
+
 
 # Compile model
 # Otimizador Adam com taxa de aprendizado de 0.01
