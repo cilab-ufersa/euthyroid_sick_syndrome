@@ -38,6 +38,17 @@ However, if the thyroid gland is underactive (hypothyroidism) or overactive (hyp
 
 We used the above attributes to build a model that can classify patients with ESS with high accuracy. These are chosen because they are the most important attributes in the dataset. Moreover, theses attributes can be measured in a blood test. 
 
+##  Publications related to this project
+
+Cavalcante, Caio, Vinicius Almeida, Marcos Barros, Nathalee Lima, and Rosana Rego. ["Thyroid Syndrome Detection using Machine Learning Algorithms: A Comparative Analysis."](https://sbic.org.br/wp-content/uploads/2023/10/pdf/CBIC_2023_paper088.pdf) In: Congresso Brasileiro de Inteligência Computacional, 2024. *Anais do XVI Congresso Brasileiro de Inteligência Computacional*. p. 1.
+
+Rego, R. C. B., Vinicius A. Almeida, Caio M. V. Cavalcante, and Nathalee C. A. Lima. ["Diagnostic Support System for Euthyroid Sick Syndrome based on Machine Learning Algorithms Approaches."](https://www.researchgate.net/publication/370553470_Diagnostic_Support_System_for_Euthyroid_Sick_Syndrome_based_on_Machine_Learning_Algorithms_Approaches?_tp=eyJjb250ZXh0Ijp7ImZpcnN0UGFnZSI6InByb2ZpbGUiLCJwYWdlIjoicHVibGljYXRpb24iLCJwb3NpdGlvbiI6InBhZ2VDb250ZW50In19) In: International Conference on Intelligent Systems and New Applications, 2023, Liverpool. *ICISNA 23 Proceedings Book*. Liverpool, 2023. v. 1. pp. 259-264.
+
+Almeida, Vinicius A., Caio M. V. Cavalcante, Nathalee C. A. Lima, and Rosana C. B. Rego. ["Classificação da Síndrome do Doente Eutireoideo com Algoritmos de Machine Learning: Uma Aplicação de Suporte ao Diagnóstico."](https://www.even3.com.br/anais/cobicet2023/616486-classificacao-da-sindrome-do-doente-eutireoideo-com-algoritmos-de-machine-learning--uma-aplicacao-de-suporte-ao-d/) In: IV Congresso Brasileiro Interdisciplinar em Ciência e Tecnologia, 2023. *Anais do Congresso Brasileiro Interdisciplinar em Ciência e Tecnologia*, 2023.
+
+Almeida, Vinicius A., and Rosana C. B. Rego. ["Síndrome do Doente Eutireoidiano: Análise de Indicadores Importantes com Machine Learning."](https://periodicos.ufersa.edu.br/ecop/article/view/12165) In: VI Encontro De Computação Do Oeste Potiguar (ECOP), 2023, Pau dos Ferros. *Anais Do Encontro De Computação Do Oeste Potiguar*, 2023. v. 1.
+
+
 ## Part 1: Results : IVCobiCET 
 
 We used 4 different machine learning approaches to build a model that can classify patients with ESS with high accuracy. The approaches are:
@@ -95,5 +106,5 @@ The results are shown in the table below:
 ## Support by 
 <div>
 
-  <img src="https://github.com/roscibely/algorithms-and-data-structure/blob/main/Ufersa.png" width="70" height="100">
+  <img src="https://github.com/roscibely/algorithms-and-data-structure/blob/main/root/Ufersa.png" width="70" height="100">
 </div>
